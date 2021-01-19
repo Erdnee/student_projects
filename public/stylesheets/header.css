@@ -1,0 +1,24 @@
+header.header {
+    background-image: url(/images/cover.jpg);
+    height: 50vh;
+    background-position: top;
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    height:50%;
+    position: absolute;
+    left:5%;
+    top:25%;
+}
+.brand{
+    text-align: center;
+    color:white;
+}
+.brand .name{
+    font-size:50px;
+}

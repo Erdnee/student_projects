@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title>Stopwatch</title>
+    <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/747c9a931e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Amjilt/fullWeb/access/css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!----Menu---->
+    <section id="menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <h3>Тамир</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <i class="fas fa-book-open"></i><a class="nav-link" href="https://tamir-code.github.io/">НҮҮР</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <div class="container">
+        <p id="stopwatch">Stop watch</p>
+        <div id="a">00:00:00</div>
+        <button onclick="run()">Start</button>
+        <button onclick="realFunction()">Reset</button>
+        <button onclick="lap()">Lap</button>
+        <div id="laps">
+
+        </div>
+    </div>
+    <script>
+        var dis = document.querySelectorAll("button")[3]
+
+        var i = 0
+        var q = 0
+        var w = 0
+        var ii
+        var qq
+        var ww
+        var a = document.getElementById("a")
+        var pause = true
+        var intervalid
+        var startstopbtn = document.querySelector("button")
+        var lapNum = 1
+        laps = document.getElementById("laps")
+
+        //var intervalId=setInterval(myFunction,10)
+        function myFunction() {
+            i++
+            if (i == 100) {
+                i = 0
+                q++
+
+            }
+            if (q == 60) {
+                q = 0
+                w++
+            }
+            a.innerHTML = ww + ":" + qq + ":" + ii
+            ii = i
+            qq = q
+            ww = w
+            if (q < 10) {
+                qq = "0" + q
+            }
+            if (w < 10) {
+                ww = "0" + w
+            }
+
+        }
+
+        function run() {
+            if (pause) {
+                intervalid = setInterval(myFunction, 10)
+                startstopbtn.innerHTML = "stop"
+                dis.disabled = false
+
+            } else {
+                clearInterval(intervalid)
+                startstopbtn.innerHTML = "start"
+                dis.disabled = true
+            }
+            pause = !pause
+        }
+
+        function realFunction() {
+            i = 0
+            q = 0
+            w = 0
+            lapNum = 1
+            laps.innerHTML = ''
+            a.innerHTML = "00:00:00"
+        }
+
+        function lap() {
+            var lapdiv = document.createElement("div")
+            lapdiv.className = "lap"
+            var lapNumber = document.createElement("div")
+            lapNumber.className = "lapNumber"
+            var lapTime = document.createElement("div")
+            lapTime.className = "lapTime"
+            lapdiv.append(lapNumber, lapTime)
+            laps.append(lapdiv)
+            console.log(lapdiv)
+            lapNumber.innerHTML = lapNum
+            lapTime.innerHTML = ww + ":" + qq + ":" + ii
+            lapNum++
+        }
+    </script>
+</body>
+
+</html>

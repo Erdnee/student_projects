@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+}
+.spanTag { 
+    font-size: 70px;
+    color: whitesmoke;
+    text-shadow:  0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+.button {
+    background-color: black;
+    color: whitesmoke;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+    padding: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+.lapDiv { 
+    color: whitesmoke;
+    text-shadow:  0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+    font-size: 60px;
+}

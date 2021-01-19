@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick="goBack()">Go Back</button>
+<button onclick="myfun()">ChangeColor</button>
+<input type="" name="">
+<script>
+	var myclick = document.getElementsByTagName('button')
+	var input = document.getElementsByTagName('input')[0]
+	var num = 0
+	var myColors = ['gray','red','blue','black']
+	function myfun() {
+		
+		if (input.value == '') {
+				num++
+				
+				document.body.style.background = myColors[num]
+			if (num >= myColors.length-1) {
+					num = 0
+				}
+		
+		}
+		else {
+			document.body.style.background = input.value
+			console.log(input.value)
+			var q = myColors.length
+			myColors[q] = input.value
+			input.value = ''
+		}
+	}
+</script>
+
+
+	<script>
+		function goBack() {
+		  window.history.back();
+		}
+	</script>
+</body>
+</html>

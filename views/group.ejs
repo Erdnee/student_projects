@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Бүтээлүүд</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/group.css">
+  </head>
+  <body>
+    <div class="group">
+      <div class="group-name"><%= group %></div>
+      <div class="students">
+          <% students.forEach( project => {%>
+              <div class="student"><a href="/<%=prof%>/<%= group%>/<%= project%>"><%= project %></a></div>
+          <% })%>    
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TODO Project</title>
+
+        <style>
+            body{
+                background-color: skyblue;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+            .q1 {
+                height: 500px;
+                width: 500px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100px;
+                background-color: #007bff;
+            }
+            p{
+                margin-right: 20px;
+                color: black;
+            }
+            .w1{
+                border: none;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                padding: 12px;
+            }
+            .w2{
+                border: none;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                padding: 12px;
+                background-color: red;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+      
+        <div class="q1">
+            <p id="addTask"> <b><u > TODO APP </u></b> </p>
+            <input type='text' class="w1" id='inputTask' placeholder="text..."/>
+            <input type='button' class="w2" onclick='addText()'  value='OK'/>
+        </div>
+        
+
+<script>
+    var row = 0;
+function addText(){
+    var input = document.getElementById('inputTask').value;
+    if(input != "")
+    {
+    var node=document.createElement("p");
+    var textnode=document.createTextNode(input);
+    node.appendChild(textnode);
+        node.setAttribute("id","contentP"+row);
+    document.getElementById('addTask').appendChild(node);
+
+    var removeTask = document.createElement('input');
+    removeTask.setAttribute('type', 'button');
+    removeTask.setAttribute("value", "Remove");
+    removeTask.setAttribute("id", "removeButton");
+    removeTask.setAttribute("onClick", "deleterow("+ row +");");
+
+    node.appendChild(removeTask);
+        row++;
+    }
+    else
+    {
+        alert("TA TEXT EE BIJ NVV");
+    }
+
+}
+function deleterow(ID)
+{
+    document.getElementById('contentP'+ID).remove();
+}
+
+</script>
+
+    </body>
+</html>
+
+

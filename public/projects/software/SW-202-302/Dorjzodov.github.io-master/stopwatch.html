@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stopwatch/style.css">
+    <title>StopWatch</title>
+</head>
+
+<body>
+    <a href="index.html#work">
+        <img src="image/back-arrow.png" style="width: 40px; float: left;"></a>
+    <center>
+        <div class="yronhiiDiv">
+            <span class="spanTag" id="minSpan">00</span>
+            <span class="spanTag">:</span>
+            <span class="spanTag" id="secSpan">00</span>
+            <span class="spanTag">:</span>
+            <span class="spanTag" id="doleSpan">00</span>
+
+        </div>
+        <div class="yronhiiDiv">
+            <button onclick="start()" id="startButton">Start</button>
+            <button onclick="lap()" id="lapButton">Lap</button>
+            <button onclick="reset()" id="resetButton">Reset</button>
+        </div>
+        <div class="lapDiv" id="lapDiv">
+            <div id="remove"></div>
+        </div>
+    </center>
+    <script src="stopwatch/app.js "></script>
+</body>
+
+</html>

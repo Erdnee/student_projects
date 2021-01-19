@@ -1,0 +1,126 @@
+/*---------Menu-------*/
+
+#menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-brand h3 {
+    padding-left: 30px;
+    color: white;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+    position: relative;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+}
+
+.nav-item .nav-link:after {
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    width: 83%;
+    height: 2px;
+    transform: scalex(0);
+    transition: 0.5s;
+    content: "";
+    background-color: white;
+}
+
+.nav-item .nav-link:hover:after {
+    transform: scalex(1);
+}
+
+.navbar {
+    background-image: linear-gradient(to right, orange, orange, red);
+}
+
+.navbar-toggler {
+    border: none!important;
+}
+
+.nav-link {
+    color: white!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.fas {
+    color: white;
+    margin-top: 13px;
+}
+
+.dropdown-item {
+    color: orange!important;
+}
+
+.container {
+    margin-top: 400px;
+}
+
+.back {
+    font-size: 40px;
+}
+
+.container {
+    margin-top: 200px;
+    margin: auto;
+    background-color: aqua;
+    height: 500px;
+    width: 300px;
+}
+
+.header {
+    width: 100%;
+    height: 82px;
+}
+
+#plused {
+    width: 200px;
+    height: 500px;
+}
+
+.a {
+    width: 30%;
+    float: left;
+    height: 80px;
+}
+
+.aa {
+    float: left;
+    width: 70%;
+    height: 80px;
+}
+
+.list {
+    width: 100%;
+    height: 90%;
+    margin: 0 auto;
+    background-color: chartreuse;
+    overflow: scroll;
+}
+
+#plused {
+    width: 100%;
+    height: 30px;
+}
+
+.check {
+    width: 89%;
+    float: left;
+    background-color: cornflowerblue;
+    height: 30px;
+    border: 1px solid white;
+}
+
+.hh {
+    width: 10%;
+    float: left;
+    height: 30px;
+}

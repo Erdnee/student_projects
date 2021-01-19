@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Modal Popup</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            height: 100vh;
+            user-select: none;
+            background-color: skyblue;     
+        }
+        .center,.content{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #click{
+            display: none;
+        }
+        .click-me{
+            display: block;
+            width: 160px;
+            height: 50px;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            color: white;
+            text-align: center;
+            font-size: 22px;
+            line-height: 50px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: .5s;
+        }
+        .click-me:hover{
+            background-color: #219150;
+        }
+        .content{
+            opacity: 0;
+            visibility: hidden;
+            width: 400px;
+            height: 350px;
+            background-color: white;
+            border-radius: 30px 30px 30px 30px;
+            transition: .3s ease-in;
+            box-shadow: 0 30px 30px 0 rgba(0,0,0,.4);
+        }
+        #click:checked ~ .content{
+            opacity: 1;
+            visibility: visible;
+        }
+        .header{
+            height: 68px;
+            background-color: #007bff;
+            overflow: hidden;
+            border-radius: 30px 30px 0 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,.2);
+        }
+        .header h2{
+            color: white;
+            padding-left: 32px;
+            font-weight: normal;
+        }
+        .fa-times{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-weight: bold;
+            color: #e8f7fc;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .fa-times:hover{
+            color: red;
+            transition: 1s;
+        }
+        .fa-code{
+            font-size: 50px;
+            color: #007bff;
+            font-weight: bold;
+            height: 80px;
+            width: 80px;
+            border: 3px solid #007bff;
+            text-align: center;
+            padding-top: 13px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            margin: 30px 0 0 160px;
+        }
+        p{
+            padding-top: 10px;
+            font-size: 19px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        .line{
+            bottom: 60px;
+            width: 100%;
+            height: 1px;
+            background-color: #007bff;
+            position: absolute;
+
+        }
+        .close-btn{
+            position: absolute;
+            bottom: 12px;
+            right: 25px;
+            border-radius: 3px;
+            background-color: red;
+            padding: 8px 10px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            color: white;
+        }
+        mark{
+            background-color: #1f0fb3;
+            color:white;
+            border-radius: 20px;
+            padding: 6px;
+            
+        }
+       
+    </style>
+</head>
+
+
+
+<body>
+    <div class="center">
+        <input type="checkbox" id="click">
+        <label for="click" class="click-me">Click me</label>
+        <div class="content">
+            <div class="header">
+                <h2><mark>SW-401</mark> Г.Пүрэвбаатар</h2>
+                <label for="click" class="fa fa-times"></label>
+            </div>
+            <label for="click" class="fa fa-code"></label>
+            <p>Information technology: MODAL POPUP</p>
+            <div class="line"></div>
+            <label for="click" class="close-btn">Close</label>
+        </div>
+    </div>
+</body>
+</html>

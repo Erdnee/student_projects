@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+        div {
+            position: relative;
+            top: 20vw;
+            left: 45%;
+
+        }
+        body {
+              background-color:#f1f1f1;
+        }
+    </style>
+</head>
+<body>
+      <div>
+      <button onclick="login()">LOGIN</button>
+      <button onclick="logout()"">LOGOUT</button>
+      </div>
+      <script>
+            var x = false
+      function login(){
+            if(x){      
+                  alert("Nevtersen baina")     
+            }else{
+                  alert("Amjilttai nevterlee")
+                  x = true
+            }     
+      }  
+      function logout(){
+            if(!x){
+                  alert("Garsan baina")
+            }else{
+                  alert("Amjilttai garlaa")
+                  x = false
+            }
+      } 
+    </Script>   
+</body>
+</html>      

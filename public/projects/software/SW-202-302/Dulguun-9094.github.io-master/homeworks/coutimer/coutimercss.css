@@ -1,0 +1,31 @@
+body{ 
+    background-color: black;
+    align-items: center;
+    margin-top: 300px;
+    font-size: 50px;
+}
+input
+{
+    padding: 20px;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: black;
+    color: lawngreen;
+    border-color: lawngreen;
+}
+button
+{
+    padding: 20px;
+    border-color: lawngreen;
+    font-size: 14px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: black;
+    color: lawngreen;
+}
+h1
+{
+    color: lawngreen;
+    font-size: 70px;
+    font-family: sans-serif;
+    text-shadow: 0 0 5px #FFF, 0 0 5px #FFF, 0 0 5px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}

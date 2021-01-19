@@ -1,0 +1,26 @@
+/*---------Menu-------*/
+
+.top-header{
+    background-color: white;
+    border: white 1px;
+   background-color: #343434;
+}
+.navbar{
+    background-color:#343434!important;
+    text-transform: uppercase;
+
+}
+.navbar img{
+    width: 3%;
+}
+.navbar-brand{
+    color: white!important;   
+}
+.nav-link{
+    color:white!important;
+text-transform: capitalize;
+}
+
+.container {
+    margin-top: 300px;
+}

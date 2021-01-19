@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stopwatchcss.css">
+</head>
+<body>
+    <center>
+        <div class="yronhiiDiv">
+            <span class="spanTag" id="minSpan">00</span>
+            <span class="spanTag">:</span>
+            <span class="spanTag" id="secSpan">00</span>
+            <span class="spanTag">:</span>
+            <span class="spanTag" id="doleSpan">00</span>
+
+        </div>
+        <div class="yronhiiDiv">
+            <button onclick="start()" id="startButton" class="button">Start</button>
+            <button onclick="lap()" id="lapButton" class="button">Lap</button>
+            <button onclick="reset()" id="resetButton" class="button">Reset</button>
+        </div>
+        <div class="lapDiv" id="lapDiv">
+            <div id="remove"></div>
+        </div>
+    </center>
+    <script src="stopwatchjs.js"></script>
+</body>
+</html>

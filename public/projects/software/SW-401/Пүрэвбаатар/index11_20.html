@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Work</title>
+
+    <style>
+        body{
+            background-color:powderblue;
+            margin-top: 60px;;
+        }
+        button{
+         width: 100px;
+         height: 50px;
+         background-color: red;
+         border: none;
+         border-radius: 25px;
+        }
+        button:hover{
+            background-color:lightgreen;
+        }
+        h3{
+            font-size: 25px;
+            color: green;
+        }
+        h1{
+            color: blue;
+        }
+      
+    </style>
+</head>
+<body>
+    
+    <center><h3>True or False</h3><p id="result"></p></center>
+    
+    <hr color="blue">
+
+    <br>
+    <center>
+    <h1>Palindrome too mun bish iig haruulna</h1>
+    Ta too oruulna uu:<input type="text" name="n" id = "N"/>
+    <button onClick="Palindrome()">shalgah</button>
+
+    <hr color="blue">
+    <h2 id="string"></h2>
+</center>
+
+    <script>
+
+        // daalgavar 1
+    function anhnii_too(n){
+
+    if (n===1){
+     return false;
+    }
+    else if(n === 2) {
+        return true;
+    }
+    else {
+        for(var x = 2; x < n; x++){
+          if(n % x === 0) {
+          return false;
+      }
+    }
+    return true;  
+    }
+}   
+      document.getElementById("result").innerHTML = anhnii_too(89);
+
+    
+
+
+    // 2
+    for (var too = 0; too <= 100; too++) {
+
+    var notPrime = false;
+    for (var i = 2; i <= too; i++) {
+        if (too%i===0 && i!==too) {
+            notPrime = true;
+        }
+    }
+    if (notPrime === false) {
+            console.log(too);
+        }
+    }
+
+    //3
+    function Palindrome()
+			{
+				var rem, temp, final = 0;
+				var number = Number(document.getElementById("N").value);
+
+				temp = number;
+				while(number>0)
+				{
+					rem = number%10;
+					number = parseInt(number/10);
+					final = final*10+rem;
+				}
+				if(final==temp)
+				{
+					window.alert("Ene too Palindrome mun baina");
+				}
+				else
+				{
+					window.alert("Ene too Palindrome bish baina ta dahin too oruulna uu");
+				}
+			}
+
+         //3(1)
+         var str = "level";
+            function palindrome(str) {
+                str = str.replace(/\W/g, "");
+                str = str.toLowerCase();
+
+                return str === str.split("").reverse().join("");
+            }
+            
+            document.getElementById("string").innerHTML = palindrome(str);   
+
+   
+        //4 
+        for( var i = 0; i <= 100; i++){
+            if( i % 3 == 0){
+                console.log(i);
+            }
+        };
+
+    </script>
+   
+</body>
+</html>

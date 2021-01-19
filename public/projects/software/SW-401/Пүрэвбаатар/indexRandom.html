@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Sentence Generator</title>
+
+    <style>
+        div{
+            background-color: aquamarine;
+            float: left;
+            margin: 0 10px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <p id="phrase"></p>
+    <button id="btn-generate">Хэрхэн сэргийлэх вэ?</button>
+
+
+    <div id="one">1</div>
+    <div id="two">2</div> 
+    <div id="three">3</div>
+    <button onclick="hide()">ok</button>
+
+
+
+    <script>
+        //box
+        let clickcount = 0;
+       document.querySelector("button").onclick = function(){
+        clickcount++;
+        if(clickcount == 1){
+            document.getElementById("one").style.visibility= "hidden";
+        }
+        else if (clickcount == 2){
+            document.getElementById("two").style.visibility= "hidden";
+            document.getElementById("one").style.visibility= "visible";
+        }
+        else if ()
+           
+       }
+     
+        
+
+
+
+
+
+
+
+
+        //Random Sentence Generator
+        document.querySelector("#btn-generate").addEventListener("click", generateRandomSentence);
+
+        function generateRandomSentence() {
+            let phrase = getRandomSentence();
+
+            document.querySelector("#phrase").innerText = phrase;
+        }
+
+        function getRandomSentence() {
+            const first = [" Олон хүн цугласан газар онц шаардлагагүй бол явахгүй байх, халдвар тархсан улс руу зорчихгүй байх.","Нүд, хамар, амандаа гараа бохир үед хүргэхгүй байхНүд, хамар, амандаа гараа бохир үед хүргэхгүй байх"];
+            const second = ["Амны хаалт хэрэглэх","Урд хөршөөс ирсэн өндөг, тахианаас татгалзах. Далайн гаралтай түүхий бүтээгдэхүүн хэрэглэхгүй байх. "];
+            const third = ["Ойр ойрхон гараа савантай усаар 20 секундээс багагүй хугацаанд угаах, гар ариутгагч хэрэглэх","Вирусын халдвартай болон ханиалгасан, халуурсан, өвчтэй хүмүүсээс хол байх"];
+
+            let firstIndex = parseInt(Math.random() * first.length);
+            let secondIndex = parseInt(Math.random() * second.length);
+            let thirdIndex = parseInt(Math.random() * third.length);
+
+            let phrase = "";
+
+            phrase += first[firstIndex];
+            phrase += " ";
+
+            phrase += second[secondIndex];
+            phrase += " ";
+
+            phrase += third[thirdIndex];
+            phrase += ".";
+
+            return phrase;
+
+        }
+
+    </script>
+
+
+</body>
+</html>

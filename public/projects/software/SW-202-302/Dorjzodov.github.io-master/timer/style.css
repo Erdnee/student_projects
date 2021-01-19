@@ -1,0 +1,26 @@
+.cont {
+    margin-left: 44%;
+    margin-top: 19%;
+}
+
+input {
+    max-width: 70px;
+    font-size: 28px;
+}
+
+.span {
+    color: white;
+    font-size: 70px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: lightblue;
+}
+
+.start {
+    font-size: 30px;
+}

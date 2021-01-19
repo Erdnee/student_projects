@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="timer/style.css">
+</head>
+
+<body>
+    <a href="http://127.0.0.1:5500/index.html#work"><img src="image/back-arrow.png" style="width: 40px; float: right; "></a>
+
+    <div class="timer">
+        <table>
+            <tr>
+                <td>
+                    <span class="span" id="minSpan"> 00</span>
+                </td>
+                <td>
+                    <span class="span">:</span>
+                </td>
+                <td>
+                    <span class="span" id="secSpan">00</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="minInput" type="number" min="0" max="59" placeholder="0-59">
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <input id="secInput" type="number" min="0" max="59" maxlength="2" placeholder="0-59">
+                </td>
+                <td>
+                    <button onclick="startButton()" class="start" id="start"> Start</button>
+                    <button onclick="stop()" class="start" id="stop"> stop</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="timer/app.js"></script>
+</body>
+
+</html>

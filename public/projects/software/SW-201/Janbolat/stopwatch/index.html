@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stopwatch</title>
+</head>
+<style type="text/css">
+	body{
+	background: url(../images/img1.jpg) center center / cover no-repeat;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+	button{
+		background: #E3E3E3;
+		padding: 2.5vw;
+		text-align: center;
+		width: 20%;
+	}
+	p{
+		float: left;
+		margin: 0;
+		font-style: 2.5em;
+	}
+</style>
+<body>
+<button onclick="goBack()" style="width: 5vw;padding: 1px;">Go Back</button>
+<div style="background: rgba(255,255,255,.8);">
+	<h1 style="margin-left: 28%;">
+	Stopwatch
+</h1>
+<p id="tsag" style="margin-left: 30%;">00</p>
+<p>:</p>
+<p id="minut">00</p>
+<p>:</p>
+<p id="sec">00</p>
+
+<div style="clear: both;"></div>
+<button onclick="start()">Start</button>
+<button onclick="reset()">Reset</button>
+<button onclick="lap()">Lap</button>
+<div id="div1" style="overflow: scroll;max-height: 50vh;width: 61%;height: 30%;">
+	
+</div>
+</div>
+<script>
+	var i = 0;
+	var m = 0;
+	var h = 0;
+	var p1 = document.getElementById('minut')
+	var p2 = document.getElementById('tsag')
+	var p3 = document.getElementById('sec')
+	var stop = 0
+	var intervalId = 0
+	var div1 = document.getElementById("div1")
+	var too = 0;
+function start() {
+	    
+	 if (intervalId == 0) {
+	  	intervalId = setInterval(secFunction,10)
+	 }
+	 else {
+	 	clearInterval(intervalId)
+	 	intervalId = 0	
+	 }
+	 	 
+}
+function secFunction(){
+	
+		p3.innerHTML = i
+		i++
+		if (i == 100) {
+			i = 1 
+			m++
+			if (m < 10) {
+				p1.innerHTML = "0" + m
+			}
+			else {
+				p1.innerHTML = m
+			}
+		}
+		if (m == 59) {
+			m = -1 
+			if (m == -1) {
+				h++
+				if (h < 10) {
+					p2.innerHTML = "0" + h
+				}
+				else {
+					p2.innerHTML = h
+				}
+			}
+			
+		}
+}
+function reset(){
+		p1.innerHTML = "00"
+		p2.innerHTML = "00"
+		p3.innerHTML = "00"
+		i = 0;
+		m = 0;
+		h = 0;
+		window.location.reload();
+}
+function lap(){
+		too++
+		var p = document.createElement("p")
+		p.innerHTML = too + "--" +p2.innerHTML +":"+p1.innerHTML +":"+p3.innerHTML
+		document.getElementById("div1").append(p)
+		p.style.float = "left" 
+		p.style.border = "2px solid red"
+		p.style.padding = "1.5vw"
+		p.style.width = "94%"
+		p.style.textAlign = "center"
+
+}
+// (m < 10 ? "0"+m : m) - minut ni 10s baga bwl 0string nemj bichne nuhtsul bielehgu bwl shuud m utgiig bichne
+</script>
+
+
+	<script>
+		function goBack() {
+		  window.history.back();
+		}
+	</script>
+</body>
+</html>

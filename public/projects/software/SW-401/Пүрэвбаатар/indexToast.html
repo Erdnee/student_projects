@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Toast notification</title>
+<style>
+
+   .snackText {
+      visibility: hidden;
+      background-color: rgb(81, 173, 204);
+      color: #fff;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      font-size: 17px;
+      margin-left: 55px;
+      margin-top: 10px;
+      border-radius: 5px;  
+   }
+   .snackBtn {
+      border: none;
+      padding: 10px;
+      font-size: 18px;
+      background-color: rgb(81, 173, 204);
+      color: white;
+      border: none;
+      margin-left: 50px;
+      border-radius: 5px;  
+   }
+   .snackText.show {
+      visibility: visible;
+      animation: fadein 0.7s, fadeout 0.5s 0.8s;
+   }
+   @keyframes fadein {
+      from {
+         left: 0;
+         opacity: 0;
+      }
+      to {
+         left: 10px;
+         opacity: 1;
+      }
+   }
+   @keyframes fadeout {
+      from {
+         left: 0;
+         opacity: 1;
+      }
+      to {
+         left: 0;
+         opacity: 0;
+      }
+   }
+</style>
+</head>
+
+<body>
+<button class="snackBtn">Show Snackbar</button>
+<div class="snackText">This is Toast notification... </div>
+
+<script>
+   document .querySelector(".snackBtn") .addEventListener("click", showSnackBar);
+   function showSnackBar() {
+      var x = document.querySelector(".snackText");
+      x.className += " show";
+      setTimeout(function() {
+         x.className = x.className.replace("show", "");
+      }, 1000);
+   }
+</script>
+
+</body>
+</html>

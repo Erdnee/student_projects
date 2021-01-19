@@ -1,0 +1,28 @@
+.groups{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    gap:10px;
+    margin-top:10px;
+}
+.group{
+    width:calc(25% - 10px);
+    background-color: rgb(75, 159, 255);
+    border-radius: 20px;
+    text-align:center;
+    padding:20px 0;
+}
+@media(max-width:800px){
+    .group{
+        width:calc(33.33333% - 10px);
+    }
+}
+@media(max-width:400px){
+    .group{
+        width:calc(50% - 10px);
+    }
+}
+.group a{
+    color:white;
+    text-decoration: none;
+}

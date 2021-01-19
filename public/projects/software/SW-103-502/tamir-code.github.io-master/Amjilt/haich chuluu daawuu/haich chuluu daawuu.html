@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>Haich chuluu</title>
+    <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/747c9a931e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Amjilt/fullWeb/access/css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!----Menu---->
+    <section id="menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <h3>Тамир</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <i class="fas fa-book-open"></i><a class="nav-link" href="https://tamir-code.github.io/">НҮҮР</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <i class="fas fa-book"></i><a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ХИЙСЭН ТӨСЛҮҮД</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/stopwatch/stopwatch.html" target="_blank">Stop watch</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/hidden%20click/hidden%20click.html" target="_blank">Hidden Visible</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/haich%20chuluu%20daawuu/haich%20chuluu%20daawuu.html" target="_blank">Хайч чулуу даавуу</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/back%20time/back%20time.html" target="_blank">Back time</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/log%20in/log%20in.html" target="_blank">Log in</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/temdeglel/temdeglel.html" target="_blank">Note</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/slider/slider.html" target="_blank">Slider</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/backgroundcolorchanger/index.html" target="_blank">BackgroundColorChange</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/random%20string/index.html" target="_blank">Random String</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/slideShow/index.html" target="_blank">Slide Show</a>
+                            <a class="dropdown-item" href="tamir-code.github.io/Amjilt/calcutor/index.html" target="_blank">Slide Show</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </section>
+    <div class="container">
+        <button onclick="game(0)">Хайч</button>
+        <button onclick="game(1)">Чулуу</button>
+        <button onclick="game(2)">Даавуу</button>
+        <p id="vs">none</p>
+        <p>Bi:<span id="bi">0</span></p>
+        <p>Cpu:<span id="cpu">0</span></p>
+        <p>Tentsee:<span id="tentsee">0</span></p>
+    </div>
+    <script>
+        var cpuType
+        var bi = 0
+        var cpu = 0
+        var tentsee = 0
+        document.addEventListener("keydown", keyDownFunction)
+
+        function keyDownFunction(event) {
+            if (event.key == "q") {
+                game(0)
+
+            } else if (event.key == "w") {
+                game(2)
+            } else if (event.key == "e") {
+                game(1)
+            }
+        }
+
+        function game(type) {
+            cpuType = Math.floor(Math.random() * 3)
+            if (type == 0 && cpuType == 1) {
+                document.getElementById("vs").innerHTML = "Би: хайч   Cpu: чулуу гаргаж cpu ялав."
+            } else if (type == 0 && cpuType == 2) {
+                document.getElementById("vs").innerHTML = "Би: хайч   Cpu: даавуу гаргаж би ялав."
+            } else if (type == 1 && cpuType == 0) {
+                document.getElementById("vs").innerHTML = "Би: чулуу  Cpu: хайч гаргаж би ялав."
+            } else if (type == 1 && cpuType == 2) {
+                document.getElementById("vs").innerHTML = "Би: чулуу  Cpu: даавуу гаргаж cpu ялав."
+            } else if (type == 2 && cpuType == 0) {
+                document.getElementById("vs").innerHTML = "Би: даавуу Cpu: хайч гаргаж cpu ялав."
+            } else if (type == 2 && cpuType == 1) {
+                document.getElementById("vs").innerHTML = "Би: даавуу Cpu: чулуу гаргаж би ялав."
+            } else {
+                document.getElementById("vs").innerHTML = "Тэнцэв"
+            }
+            if (type == 0 && cpuType == 2 || type == 1 && cpuType == 0 || type == 2 && cpuType == 1) {
+                bi++
+            } else if (type == 0 && cpuType == 1 || type == 1 && cpuType == 2 || type == 2 && cpuType == 0) {
+                cpu++
+            } else {
+                tentsee++
+            }
+            document.getElementById("bi").innerHTML = bi
+            document.getElementById("cpu").innerHTML = cpu
+            document.getElementById("tentsee").innerHTML = tentsee
+        }
+    </script>
+</body>
+
+</html>

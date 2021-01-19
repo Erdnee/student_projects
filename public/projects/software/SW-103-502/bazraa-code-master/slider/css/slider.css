@@ -1,0 +1,44 @@
+/*---------Menu-------*/
+
+.top-header{
+    background-color: white;
+    border: white 1px;
+   background-color: #343434;
+}
+.navbar{
+    background-color:#343434!important;
+    text-transform: uppercase;
+
+}
+.navbar img{
+    width: 3%;
+}
+.navbar-brand{
+    color: white!important;   
+}
+.nav-link{
+    color:white!important;
+text-transform: capitalize;
+}
+/*------slider-----*/
+
+.container {
+    width: 800px;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: 1s;
+}
+
+#aa {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    transition: 1s;
+}
+
+#aa img {
+    width: 800px;
+    height: 500px;
+    object-fit: cover;
+}

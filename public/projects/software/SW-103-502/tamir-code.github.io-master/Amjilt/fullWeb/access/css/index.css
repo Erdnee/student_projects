@@ -1,0 +1,291 @@
+/*---------Menu-------*/
+
+#menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-brand h3 {
+    padding-left: 30px;
+    color: white;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+    position: relative;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+}
+
+.nav-item .nav-link:after {
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    width: 83%;
+    height: 2px;
+    transform: scalex(0);
+    transition: 0.5s;
+    content: "";
+    background-color: white;
+}
+
+.nav-item .nav-link:hover:after {
+    transform: scalex(1);
+}
+
+.navbar {
+    background-image: linear-gradient(to right, orange, orange, red);
+}
+
+.navbar-toggler {
+    border: none!important;
+}
+
+.nav-link {
+    color: white!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.fas {
+    color: white;
+    margin-top: 13px;
+}
+
+.dropdown-item {
+    color: orange!important;
+}
+
+
+/*-----About me -------*/
+
+#testimonials {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+#testimonials .row {
+    margin-top: 30px;
+}
+
+.col-md-12 {
+    margin: 40px auto;
+}
+
+.profile {
+    margin-top: 100px;
+    padding: 70px 10px 10px;
+    background-color: #efefef;
+}
+
+.user {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.profile img {
+    top: -20px;
+    position: absolute;
+    right: 480;
+    border: 10px solid orange;
+}
+
+.profile h3 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: orange;
+}
+
+#testimonials span {
+    font-size: 12px;
+    color: #333;
+}
+
+blockquote {
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.profile:hover {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+/*--------about-----*/
+
+#about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+}
+
+#about img {
+    width: 80%;
+    margin-left: 120px;
+}
+
+.about-content {
+    padding-top: 20px;
+}
+
+
+/*-----Hobbi----*/
+
+#hobbi {
+    padding: 40px 0;
+    background: #efefef;
+}
+
+#hobbi h1 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.single-price {
+    margin: 10px auto;
+    display: inline;
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+.single-price:hover {
+    box-shadow: 0 2px 20px #333;
+}
+
+.price-head {
+    background-color: orange;
+    display: inline;
+    float: left;
+    padding: 10px 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.price-head h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.price-head p {
+    font-size: 25px;
+    color: #ccc;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.price-content {
+    display: inline;
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.price-content ul li {
+    border-bottom: 1px solid #efefef;
+    padding: 15px 10px;
+    list-style: none;
+}
+
+ul li:last-child {
+    border: none;
+}
+
+.fa-check-circle {
+    color: green;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.fa-times-circle {
+    color: red;
+    margin-right: 1 0px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none !important;
+    color: #fff!important;
+}
+
+
+/*-------Холбоо барих-------*/
+
+#contact {
+    background: #fff;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #777;
+}
+
+#contact h1 {
+    text-align: center
+}
+
+.follow {
+    background: #efefef;
+    padding: 10px;
+    margin: 15px;
+}
+
+.contact-info .fa {
+    margin: 10px;
+    color: orange;
+    font-weight: bold;
+}
+
+
+/*-----Ending-----*/
+
+#footer {
+    background: #333;
+    color: #fff;
+    padding: 12px;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+}
+
+.layer {
+    background-color: orange;
+    ;
+}
+
+.layer-1 {
+    flex: 1;
+}
+
+.layer-2 {
+    flex: 1;
+}
+
+.layer-3 {
+    flex: 1;
+}
+
+.layer-2 h1 {
+    text-align: center;
+    margin-top: 400px;
+    color: white;
+}

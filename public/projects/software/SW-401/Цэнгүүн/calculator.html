@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>site</title>
+
+
+    <link rel="stylesheet" type="text/css" href="./access/css/jquery.multiscroll.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="./access/js/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="./access/js/jquery.multiscroll.min.js"></script>
+
+	<script type="text/javascript">
+	 $(document).ready(function() {
+            $('#myContainer').multiscroll({
+            	sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+            	anchors: ['first', 'second', 'third'],
+            	menu: '#menu',
+            	css3: true
+            });
+        });
+    </script>
+
+    <style>
+		
+.one {
+    text-align: center;
+    justify-content: center;
+}
+.one h1 {
+    color: white;
+    font-size: 65px;
+    margin: 0;
+    font-family: sans-serif;
+}
+.one p {
+    padding:0 15px;
+    font-size: 25px;
+    color:white;
+
+}
+.four {
+    background: url(./access/img/img2.jpg);
+   -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+}
+.four h2{
+    font-size: 26px;
+}
+.three {
+    background: url(./access/img/img3.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.two {
+    background: url(./access/img/Book1.jpg);
+    -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+}
+.five {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(./access/img/Book2.jpg);
+    -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+    color: white;
+}
+.five h1{
+    font-size: 65px;
+    margin: 0;
+    font-family: sans-serif;
+}
+.five h1 a{
+    padding:0;
+    margin: 0;
+	color: aliceblue;
+    text-decoration: none;
+}
+.six {
+    background: white;
+    font-size: 30px;
+    background: white;
+    text-align: center;
+}
+.six .fa-facebook {
+    color:blue;
+    margin: 10px;
+}
+.six .fa-instagram{
+	color: rebeccapurple;
+}	
+input{
+      width: 200px;
+      height:25px;
+      
+    }
+    button{
+        width: 48px;
+        height: 45px;
+    }
+    .container {
+        width: 200px;
+        height: 60px;
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+    }
+    .ehen {
+        width: 100%;
+        height: 50%;
+        border-bottom: 1px #000 solid ;
+    }
+    .odoo {
+        width:100%;
+        height: 50%;
+    }
+</style>
+
+</head>
+<body>
+
+
+
+<div id="myContainer">
+
+	<div class="ms-left one">
+		<div class="ms-section">
+            <h1>Батзаяа Цэнгүүн</h1>
+			<p>Сайн байцгаан уу? Намайг цэнгүүн гэдэг. Одоогоор Энэтхэгийн их сургуульд суралцаж байгаа оюутан.</p>
+		</div>
+
+		<div class="ms-section two">
+			<h1></h1>
+		</div>
+
+		<div class="ms-section three">
+            
+		</div>
+	</div>
+
+	<div class="ms-right">
+		<div class="ms-section four">
+			
+		</div>
+
+		<div class="ms-section five">
+            <h1><a href="#" id="project">Calculator</a></h1>
+            <div class="container">
+                <div class="ehen"><input type="text" id="myInput"></div>
+                <div class="odoo"><input type="text" id="myInput1"></div>
+            </div>
+            <table>
+                <tr>
+                    <td><button onclick="insert(7)">7</button></td>
+                    <td><button onclick="insert(8)">8</button></td>
+                    <td><button onclick="insert(9)">9</button></td>
+                    <td><button onclick="insert('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert(4)">4</button></td>
+                    <td><button onclick="insert(5)">5</button></td>
+                    <td><button onclick="insert(6)">6</button></td>
+                    <td><button onclick="insert('+')">+</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert(1)">1</button></td>
+                    <td><button onclick="insert(2)">2</button></td>
+                    <td><button onclick="insert(3)">3</button></td>
+                    <td><button onclick="insert('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="insert('/')">/</button></td>
+                    <td><button onclick="insert(0)">0</button></td>
+                    <td><button onclick="clean()">C</button></td>
+                    <td><button onclick="equal()">=</button></td>
+                </tr>
+            </table>
+		</div>
+
+		<div class="ms-section six">
+            <h1><a href="#" style="text-decoration: none;color: aquamarine;">Contact Me</a></h1>
+            <a href="https://www.facebook.com/profile.php?id=100008978314647" target="_blank" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-instagram"></a>
+			
+		</div>
+	</div>
+</div>
+<script>
+     function insert(num){
+        var odoo = document.getElementById('myInput1')
+        odoo.value += num
+    }
+     function clean(){
+        var odoo = document.getElementById('myInput1')
+        odoo.value = odoo.value.substring(0,odoo.value.length-1)
+     }  
+     function equal(){
+        var odoo = document.getElementById("myInput1")
+        var ehen = document.getElementById('myInput') 
+        ehen.value = eval(myInput1.value)
+        odoo.value = ehen.value
+     }
+</script>
+</body>
+</html>

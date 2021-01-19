@@ -1,0 +1,39 @@
+/*---------Menu-------*/
+
+.top-header{
+    background-color: white;
+    border: white 1px;
+   background-color: #343434;
+}
+.navbar{
+    background-color:#343434!important;
+    text-transform: uppercase;
+
+}
+.navbar img{
+    width: 3%;
+}
+.navbar-brand{
+    color: white!important;   
+}
+.nav-link{
+    color:white!important;
+text-transform: capitalize;
+}
+.container {
+    margin-top: 400px;
+}
+
+#a1,
+#a2,
+#a3 {
+    width: 100px;
+    height: 100px;
+    background-color: aquamarine;
+    display: inline-block;
+    margin: 10px 10px;
+}
+
+.back {
+    font-size: 40px;
+}

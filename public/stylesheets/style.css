@@ -1,0 +1,12 @@
+@import "header.css";
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin:0;
+}
+a{
+  text-decoration: none;
+}
+

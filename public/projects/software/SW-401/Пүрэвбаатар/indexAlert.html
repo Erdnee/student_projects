@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+
+    <div id="main"></div>
+
+    <script>
+
+    //alert
+     function myFunction() {
+     setTimeout(function(){ alert("Hi World My name is Thuesday_hero"); }, 3000);
+    };
+    myFunction();
+
+
+
+    //div java
+    var div = document.createElement("div");
+    div.style.width = "100px";
+    div.style.height = "100px";
+    div.style.background = "yellow";
+    div.style.cursor = "pointer";
+    document.getElementById("main").appendChild(div);
+    
+    //color change
+    document.getElementById("main").addEventListener("mouseover", function() {
+    document.getElementById("main").style.backgroundColor = "red";
+    });
+    
+    document.getElementById("main").addEventListener("mouseout", function() {
+    document.getElementById("main").style.backgroundColor = "yellow";
+    });
+
+    </script>
+
+
+</body>
+</html>

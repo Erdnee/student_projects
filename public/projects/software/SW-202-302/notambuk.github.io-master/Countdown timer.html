@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown</title>
+</head>
+<style>
+</style>
+<body>
+    <center>
+        <button onClick="minus()">-</button>
+        <input id="inputValue"></input>
+        <button onClick="plus()">+</button>
+        <button onClick="reset()">RESET</button>
+        <h1 id="h1tag">0</h1>
+    </center>
+    <script>
+        var a = 0
+        var inputValue = Number(document.getElementById("inputValue").value)
+        function plus(){
+            var inputValue = Number(document.getElementById("inputValue").value)
+            var h1tag=Number(document.getElementById("h1tag").innerHTML)
+            if(inputValue == " "){
+                var hariu = h1tag + 1
+            }else{
+                var hariu = h1tag + inputValue 
+            }
+            document.getElementById("h1tag").innerHTML = hariu
+        }
+        function minus(){
+            var inputValue = Number(document.getElementById("inputValue").value)
+            var h1tag=Number(document.getElementById("h1tag").innerHTML)
+            if(inputValue == " "){
+                var hariu = h1tag - 1
+            }else{
+                var hariu = h1tag - inputValue
+            }
+            document.getElementById("h1tag").innerHTML = hariu 
+        }
+        function reset(){
+            var inputValue = Number(document.getElementById("inputValue").value)
+            var h1tag=Number(document.getElementById("h1tag").innerHTML)
+            var hariu = h1tag - h1tag
+            document.getElementById("h1tag").innerHTML = hariu
+        }
+    </script>
+</body>
+</html>

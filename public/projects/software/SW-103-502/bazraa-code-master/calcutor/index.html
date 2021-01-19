@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <meta charset="utf-8">
+    <script src="https://kit.fontawesome.com/747c9a931e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Amjilt/fullWeb/access/css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!----Menu---->
+    <div class="top-header">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"><img class="rounded-circle" src="./img/113347876_2700044296928580_6794358289877725226_n.jpg">  Базараа</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse menu" id="navbarNavDropdown">
+                  <ul class="navbar-nav  ml-auto">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        хийсэн ажилууд
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="./calcutor/index.html">calculator</a>
+                        <a class="dropdown-item" href="./backgroundcolorchanger/index.html">background color changer</a>
+                        <a class="dropdown-item" href="./slideShow/index.html">stopwatch</a>
+                        <a class="dropdown-item" href="./haich chuluu daawuu/haich chuluu daawuu.html">Game</a>
+                        <a class="dropdown-item" href="./slider/slider.html">slide</a>
+                        <a class="dropdown-item" href="./slideShow/index.html">slideShow</a>
+                        <a class="dropdown-item" href="./back time/back time.html">Timer</a>
+                        <a class="dropdown-item" href="./temdeglel/temdeglel.html">To do app</a>
+                        <a class="dropdown-item" href="./random string/index.html">Random</a>
+                        <a class="dropdown-item" href="./hidden click/hidden click.html">hide and seek</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>
+  </div>
+  <table>
+    <tr>
+        <td colspan="4"><input id="myInput" disabled></td>
+    </tr>
+    <tr>
+        <td><button onclick="insert(7)">7</button></td>
+        <td><button onclick="insert(8)">8</button></td>
+        <td><button onclick="insert(9)">9</button></td>
+        <td><button onclick="insert('*')">*</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="insert(4)">4</button></td>
+        <td><button onclick="insert(5)">5</button></td>
+        <td><button onclick="insert(6)">6</button></td>
+        <td><button onclick="insert('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="insert(1)">1</button></td>
+        <td><button onclick="insert(2)">2</button></td>
+        <td><button onclick="insert(3)">3</button></td>
+        <td><button onclick="insert('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="clean()">C</button></td>
+        <td><button onclick="insert(0)">0</button></td>
+        <td><button onclick="insert('/')">/</button></td>
+        <td><button onclick="equal('=')">=</button></td>
+    </tr>
+</table>
+<script>
+    function clean(){
+        var input=document.getElementById("myInput")
+        input.value=input.value.substring(0,input.value.length-1) 
+    }
+    function insert(arg){
+        var input=document.getElementById("myInput")
+        input.value=input.value+arg
+    }
+    function equal(){
+        var input=document.getElementById("myInput")
+        input.value=eval(input.value)
+    }
+</script>
+</body>
+
+</html>

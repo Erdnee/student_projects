@@ -1,0 +1,312 @@
+-<!DOCTYPE html>
+<html>
+<title>My Web Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+ html {
+  scroll-behavior: smooth;
+}
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+
+.w3-sidebar {width: 120px;background: #222;}
+
+#main {margin-left: 120px}
+
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+.iframe-container{
+  position: relative;
+ 
+}
+.iframe-container iframe{
+  position: absolute;
+  max-width: 800px;
+  outline: none;
+}
+  @media (max-width:891px){
+    .iframe video {
+      max-width:90%;
+    }
+  }
+</style>
+<body class="w3-black">
+
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+
+  <img src="https://www.hdwallback.net/wp-content/uploads/2018/01/Hacker-Wallpaper-images-240x320.jpg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-file-code-o w3-xxlarge"></i>
+    <p>PROJECT</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-photo w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+  </div>
+</div>
+
+
+<div class="w3-padding-large" id="main">
+
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> </h1>
+    <p>Programmer and Web Developer.</p>
+    <img src="https://www.hdwallback.net/wp-content/uploads/2018/01/Hacker-Wallpaper-images-240x320.jpg" alt="boy" class="w3-image" width="400" height="500">
+  </header>
+
+
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">ABOUT ME</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Сайн байна уу😃 . ХУД 115-р сургууль 12а ангийн сурагч Г.Пүрэвбаатар байна. 
+      Дуртай зүйлс: programm code бичих маш их дуртай.
+      Сонирходог спорт: сагсан бөмбөг, волейбол. Мөн би шатар тоглох дуртай яагаад гэвэл programm бичихэд logic сэтгэлгээг дэмжидэг.
+      Чөлөөт цагаараа би дуу сонсож, компютердээрээ суун чадвараа дээшлүүлэхийг хичээдэг.
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+    <p class="w3-wide">HTML</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:62%"></div>
+    </div>
+    <p class="w3-wide">CSS</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:55%"></div>
+    </div>
+    <p class="w3-wide">JAVASCRIPT</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:45%"></div>
+    </div>
+    <p class="w3-wide">SQL</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:35%"></div>
+    </div><br>
+    
+    
+    
+
+    
+      <h3 class="w3-padding-24 w3-text-light-grey">My Shool</h3>  
+    <img src="https://scontent.fuln6-1.fna.fbcdn.net/v/t1.0-9/66616810_642829296217739_759061080734433280_o.jpg?_nc_cat=104&ccb=2&_nc_sid=e3f864&_nc_ohc=GbYnbR6WKP0AX_tnsk3&_nc_ht=scontent.fuln6-1.fna&oh=d28a48a3fad8b5d5326543c22c619750&oe=60174BD0" alt="Avatar" class="w3-round" style="width:100%; height: auto;  overflow: hidden; object-fit: cover; background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <p><span class="w3-large w3-margin-right" style="font-weight: bold; color: gold;">Энэтхэгийн их сургууль.</span> <a style="color:#007bff;" href="https://amjilt.com/" target="_blak">Amjilt.com</a></p>
+    <p>"Хамгийн хялбар, сонирхолтой, шинэлэг болон үр дүнтэй шийдлийг amjilt.com платформ сурч хөгжин өөрчлөгдөхийг хүсч байгаа хүн бүрт зориулан тасралтгүй хөгжүүлж байна.
+
+      Та манай платформ дээрх сургуулиудаас сонгож онлайнаар суралцах боломжтой мөн багш, контент бүтээгч нарын хичээл, контентыг үзэж суралцах, шалгалт өгөх, харилцах боломжтой.
+      
+      Нөгөө талаас танд онлайнаар сургалт явуулах, хичээл заах, өөрийн контентоо худалдах бүхий л боломжийг бид олгож байна." <br> 
+      
+     Ж. ШИЖИР</p><br>
+    <hr>
+  
+    <p><span class="w3-large w3-margin-right" style="font-weight: bold; color: gold;">115-р сургууль.</span> <a href="https://www.google.com/maps/place/115-%D1%80+%D1%81%D1%83%D1%80%D0%B3%D1%83%D1%83%D0%BB%D1%8C/@47.8921579,106.9008726,15z/data=!4m5!3m4!1s0x0:0xb7a0a83e5b337635!8m2!3d47.8921579!4d106.9008726" target="_blank"></a></p>
+   <div class="iframe-content">
+      <a href="https://www.youtube.com/watch?v=z-Lc_5wdr1Q&t=6s" target="_blank"><img src="115.png" alt="115school" class="w3-round" style="width:100%; height:auto; overflow: hidden; object-fit: cover; background-size: cover; background-repeat: no-repeat; background-position: center;"></a>
+    </div>
+    
+</div>
+
+  <div class="w3-padding-64 w3-content" id="projects">
+    <h2 class="w3-text-light-grey">My projects</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <div class="w3-container w3-padding-32" id="projects"> 
+    </div>
+  
+    <div class="w3-row-padding">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">CALCULATOR</div>
+          <li><a href="indexCALC.html" target="_blank"><img src="https://www.ebuyer.com/blog/wp-content/uploads/2014/07/buttons-on-a-calculator-header1.jpg"  class="w3-hover-opacity" alt="Calculator" style="width:100%" height="170px"></a></li>
+          
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Rock Paper Scissors</div>
+          <li><a href="Rock_Paper_Scissors.html" target="_blank"><img src="https://espressoscience.files.wordpress.com/2017/08/rockpaperscissors2.jpg?w=960&h=720"  class="w3-hover-opacity" alt="Rock Paper Scissors" style="width:100%" height="170px"></a></li>
+          
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Math Kids</div>
+          <li><a href="indexMath.html" target="_blank"><img src="https://www.rcreducation.com/wp-content/uploads/2019/01/icon.png"  class="w3-hover-opacity" alt="Math Game" style="width:100%" height="185px"></a></li>
+          
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">TODO List</div>
+          <li><a href="indexTODO.html" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWBz1JoirkjsBFKj4CCpyoL5-GoktKmdAu_Q&usqp=CAU"  class="w3-hover-opacity" alt="TODO list" style="width:100%" height="170px"></a></li>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="w3-row-padding">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Modal Popup</div>
+          <li><a href="indexPop.html" target="_blank"><img src="https://sabe.io/tutorials/how-to-create-modal-popup-box/hero.png"  class="w3-hover-opacity" alt="Capslock" style="width:99%" height="170px"></a></li>
+          
+        </div>
+      </div>
+        
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Tic.Tac.Toe</div>  
+           <li><a href="index.Tic.html" target="_blank"><img src="https://images-na.ssl-images-amazon.com/images/I/81tlfovdB8L.png"  class="w3-hover-opacity" alt="calendar" style="width:99%" height="170px"></a></li> 
+          
+         </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">  
+        <div class="w3-display-container">  
+          <div class="w3-display-topleft w3-black w3-padding">Corona Virius</div>
+          <li><a href="index.Virus.html"  target="_blank"><img src="https://cdn.mos.cms.futurecdn.net/pEUiKT48gcH4PgW6Wdg65e.jpg"  class="w3-hover-opacity" alt="Corona"  style="width:99%" height="170px"></a></li>   
+          
+        </div>
+      </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">javascript quiz</div>
+          <li><a href="gift_search.html" target="_blank"><img src="https://i.morioh.com/2020/02/12/71b41185a613.jpg"  class="w3-hover-opacity" alt="Gift search" style="width:99%" height="170px"></a></li>
+         </div>
+         
+        </div>
+    </div>
+
+    <div class="w3-row-padding">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Background color changer</div>  
+          <li><a href="index_bgchange.html" target="_blank"><img src="./1.gif"  class="w3-hover-opacity" alt="Capslock" style="width:99%" height="170px"></a></li>
+          
+        </div>
+      </div>
+        
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Countdown timer</div>
+          <li><a href="index_Countdowntimer.html" target="_blank"><img src="./6.jpg"  class="w3-hover-opacity" alt="calendar" style="width:99%" height="170px"></a></li>
+          
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Carousel slider</div>
+          <li><a href="index.Carousel-slider.html" target="_blank"><img src="./5l.png"  class="w3-hover-opacity" alt="Capslock" style="width:99%" height="170px"></a></li>
+          
+        </div>
+      </div>
+        
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding">Stop-watch</div>
+           <li><a href="index.Stop_Watch.html" target="_blank"><img src="./3.jpg"  class="w3-hover-opacity" alt="calendar" style="width:99%" height="170px"></a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="https://th.bing.com/th/id/OIP.XqCf-EXINHY8E0khFudr0AHaDt?w=282&h=175&c=7&o=5&dpr=1.45&pid=1.7" style="width:100%">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9cEhCq4oBU4sxsOIPiI5xgGqclTK2QkX5Gg&usqp=CAU" style="width:100%">
+        <img src="https://th.bing.com/th/id/OIP.dJlTJAFCC92OVJgUurUVhwHaEK?w=328&h=184&c=7&o=5&dpr=1.45&pid=1.7" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="https://th.bing.com/th/id/OIP.VCvw9k2bW0hVpl29IelpeQHaEK?w=333&h=187&c=7&o=5&dpr=1.45&pid=1.7" style="width:100%">
+        <img src="https://th.bing.com/th/id/OIP.WFpKQFo2KJLajctOcBKibwHaEC?w=266&h=180&c=7&o=5&dpr=1.45&pid=1.7" style="width:100%">
+        <img src="https://th.bing.com/th/id/OIP.6RkO-mtEdx4xG4J-j_7w6wHaFj?w=220&h=180&c=7&o=5&dpr=1.45&pid=1.7" style="width:100%">
+
+      </div>
+   
+    </div>
+  </div>
+
+
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Ulaanbaatar, MGL</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: 99562946, 94274004</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: purwehero@gmail.com</p>
+    </div><br>
+    <p> Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" onclick="ok()" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+
+  </div>
+  
+
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-youtube w3-hover-opacity"></i>
+
+    
+   
+
+  </footer>
+
+
+
+
+  <script>
+     function myFunction() {
+     setTimeout(function(){ alert("Hi! Welcome to my Web site"); }, 1000);
+    };
+    myFunction();
+
+    function ok(){
+      alert("thank you :)")
+    }
+  </script>
+
+</body>
+</html>

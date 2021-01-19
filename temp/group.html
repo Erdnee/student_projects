@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .group{
+            width:100%;
+        }
+        .group-name{
+            text-align:center;
+            font-size:50px;
+        }
+        .students {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .student {
+            width: calc(25% - 10px);
+            background-color: rgb(75, 159, 255);
+            border-radius: 20px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media(max-width:800px) {
+            .student {
+                width: calc(33.33333% - 10px);
+            }
+        }
+
+        @media(max-width:400px) {
+            .student {
+                width: calc(50% - 10px);
+            }
+        }
+
+        .student a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="group">
+        <div class="group-name">SW-201</div>
+        <div class="students">
+
+            <div class="student"><a href="http://localhost:3000/software/SW-201/Bayraa">Bayraa</a></div>
+
+            <div class="student"><a href="http://localhost:3000/software/SW-201/Janbolat">Janbolat</a></div>
+
+            <div class="student"><a href="http://localhost:3000/software/SW-201/Turuu">Turuu</a></div>
+
+        </div>
+    </div>
+</body>
+
+</html>

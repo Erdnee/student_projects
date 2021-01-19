@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Color Change</title>
+</head>
+<body>  
+        <button id="colorify">Color Change</button>
+        <br>
+        <input type="text" id="colorInputText">
+        <input type="button" id="colorButton" value="Add Color" onClick="changeColor()">
+<script>
+        var colors = ["red", "blue", "green", "purple", "aqua", "black"],
+        i = 0;
+        document.getElementById("colorify").onclick = function(){
+            document.body.style.background = colors[i];
+            i = (i + 1)  % colors.length;
+        }
+
+        function changeColor() {
+        var color = document.getElementById("colorInputText").value;
+            document.body.style.backgroundColor = color;
+        }
+</script>
+</body>
+</html>

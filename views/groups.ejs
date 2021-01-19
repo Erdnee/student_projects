@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Groups</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/groups.css' />
+  </head>
+  <body>
+    <div class="groups">
+        <% groups.forEach( group => {%>
+            <div class="group"><a href="/<%=prof%>/<%=group%>"><%= group %></a></div>
+        <% })%>    
+    </div>    
+  </body>
+</html>

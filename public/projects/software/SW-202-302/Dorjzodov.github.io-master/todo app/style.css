@@ -1,0 +1,13 @@
+body {
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: lightblue;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

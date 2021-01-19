@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>site</title>
+
+
+    <link rel="stylesheet" type="text/css" href="./access/css/jquery.multiscroll.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="./access/js/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="./access/js/jquery.multiscroll.min.js"></script>
+
+	<script type="text/javascript">
+	 $(document).ready(function() {
+            $('#myContainer').multiscroll({
+            	sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+            	anchors: ['first', 'second', 'third'],
+            	menu: '#menu',
+            	css3: true
+            });
+        });
+    </script>
+
+    <style>
+		
+.one {
+    text-align: center;
+    justify-content: center;
+}
+.one h1 {
+    color: white;
+    font-size: 65px;
+    margin: 0;
+    font-family: sans-serif;
+}
+.one p {
+    padding:0 15px;
+    font-size: 25px;
+    color:white;
+
+}
+.four {
+    background: url(./access/img/img2.jpg);
+   -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+}
+.four h2{
+    font-size: 26px;
+}
+.three {
+    background: url(./access/img/img3.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.two {
+    background: url(./access/img/Book1.jpg);
+    -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+}
+.five {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(./access/img/Book2.jpg);
+    -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+    color: white;
+}
+.five .pro {
+    width: 400px;
+    height: 370px;
+    box-shadow: inset;
+    position: relative;
+    transition: .3s;
+}
+.five .pro a {
+    padding: 0;
+    margin: 25px;
+    color:rgb(10, 10, 10);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 40px;
+}
+.five h1{
+    font-size: 65px;
+    margin: 0;
+    font-family: sans-serif;
+}
+.five h1 a{
+    padding:0;
+    margin: 0;
+	color: aliceblue;
+    text-decoration: none;
+}
+.six {
+    background: white;
+    font-size: 30px;
+    background: white;
+    text-align: center;
+}
+.six .fa-facebook {
+    color:blue;
+    margin: 10px;
+}
+.six .fa-instagram{
+	color: rebeccapurple;
+}	
+</style>
+
+</head>
+<body>
+
+
+
+<div id="myContainer">
+
+	<div class="ms-left one">
+		<div class="ms-section">
+            <h1>Батзаяа Цэнгүүн</h1>
+			<p>Сайн байцгаан уу? Намайг цэнгүүн гэдэг. Одоогоор Энэтхэгийн их сургуульд суралцаж байгаа оюутан.</p>
+		</div>
+
+		<div class="ms-section two">
+			<h1></h1>
+		</div>
+
+		<div class="ms-section three">
+            
+		</div>
+	</div>
+
+	<div class="ms-right">
+		<div class="ms-section four">
+			
+		</div>
+
+		<div class="ms-section five">
+            <h1><a href="#" id="project">Rock paper scissors</a></h1>
+            <div class="pro">
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissor</button>
+                <div>CPU WIN: <p class="ts1">0</p></div>
+                <div>YOUR WIN: <p class="ts2">0</p></div>
+                <div>DRAW: <p class="ts3">0</p></div>
+                <div class="disp"></div>
+            </div>
+		</div>
+
+		<div class="ms-section six">
+            <h1><a href="#" style="text-decoration: none;color: aquamarine;">Contact Me</a></h1>
+            <a href="https://www.facebook.com/profile.php?id=100008978314647" target="_blank" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-instagram"></a>
+			
+		</div>
+	</div>
+</div>
+<script>
+document.getElementById('rock').onclick = user;
+document.getElementById('paper').onclick = user;
+document.getElementById('scissors').onclick = user;
+var yourScore = 0
+var cpuScore = 0
+var draw = 0
+var result
+function user(){
+var userChoice = this.id;
+
+var computerChoice = Math.random();
+     if (computerChoice < 0.34) {
+         computerChoice = "rock";
+      }else if(computerChoice <= 0.67) {
+         computerChoice = "paper";
+      }else{
+         computerChoice = "scissors";
+      }; 
+      compare(userChoice,computerChoice)    
+ document.querySelector('.disp').innerHTML = "User: " + userChoice + " vs " + "Computer: " + computerChoice
+function compare(choice1, choice2) {
+
+    if (choice1 === choice2) {
+        draw++
+        document.querySelector('.ts3').innerHTML = draw
+       
+        
+    }
+
+    if (choice1 === "rock") {
+        if (choice2 === "scissors") {
+            yourScore++
+            document.querySelector('.ts2').innerHTML = yourScore
+            
+        }else{
+            cpuScore++
+            document.querySelector('.ts1').innerHTML = cpuScore
+           
+        }
+            }
+
+     if (choice1 === "paper") {
+         if (choice2 === "rock") {
+            yourScore++
+            document.querySelector('.ts2').innerHTML = yourScore
+            
+          } else {
+            cpuScore++
+            document.querySelector('.ts1').innerHTML = cpuScore
+           
+          }
+         }
+    
+         if (choice1 === "scissors") {
+         if (choice2 === "rock") {
+            cpuScore++
+            document.querySelector('.ts1').innerHTML = cpuScore
+           
+         } else {
+            yourScore++
+            document.querySelector('.ts2').innerHTML = yourScore
+           
+        }
+    }
+}
+}
+</script>
+</body>
+</html>

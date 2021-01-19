@@ -1,0 +1,65 @@
+/*---------Menu-------*/
+
+#menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-brand h3 {
+    padding-left: 30px;
+    color: white;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+    position: relative;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+}
+
+.nav-item .nav-link:after {
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    width: 83%;
+    height: 2px;
+    transform: scalex(0);
+    transition: 0.5s;
+    content: "";
+    background-color: white;
+}
+
+.nav-item .nav-link:hover:after {
+    transform: scalex(1);
+}
+
+.navbar {
+    background-image: linear-gradient(to right, orange, orange, red);
+}
+
+.navbar-toggler {
+    border: none!important;
+}
+
+.nav-link {
+    color: white!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.fas {
+    color: white;
+    margin-top: 13px;
+}
+
+.dropdown-item {
+    color: orange!important;
+}
+
+.container {
+    margin-top: 400px;
+}

@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Portfolio</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <style>
+            #myInput{
+                width:200px;
+                height:50px;
+            }   
+            .calc{
+                width:45px;
+                height:45px;
+            }
+            .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 30px;
+                color:white;
+            }
+            .float-left{
+                display: table-cell;
+            }
+            .btn1{
+                height: 50px;
+                width: 80px;
+            }
+            .bugd{
+                margin-left: 103px;
+                font-size: 35px;
+                margin-top: -50px;
+                position: fixed;  
+            }
+            .stopwatch{
+                font-size: 40px;
+                margin-left: 75px;
+            }
+            #lap{
+                margin-left: 15px;
+                font-size: 35px;
+                margin-top: 70px;
+            }
+            .tom{
+                border: 1px solid black;
+                height: 350px;
+                width: 349px;
+                overflow-y: scroll;
+                margin-top: 50px;
+                margin-left: 175px;
+            }
+            .bbb{
+                position: fixed;
+            }
+            .todo{
+                height: 100px;
+                width: 600px;
+                margin-left: 10px;
+            }
+            #nemeh{
+                height: 106px;
+                width: 100px;
+            }
+            .tom1{
+                border: 1px solid black;
+                width: 746px;
+                height: 400px;
+                overflow-y: scroll;
+                }
+            .login{
+                position: absolute;
+                margin-top: 40px;
+                margin-left: -110px;
+             }  
+             .toonii{
+                 margin-left:250px;
+             }  
+             #aaa{
+                 width: 500px;
+                 margin-left:35px;
+             }
+             .pause{
+                 position: fixed;
+             }
+             .rps {
+                position:absolute;
+                left:537px;
+                top:9px;
+                height:299px;
+                background-color:aquamarine
+            }
+            #result {
+                background-color: black;
+                width: 230px;
+                height: 237px;
+                position: relative;
+                padding: 0;
+                top: -30px;
+                color: white;
+                font-size: 30px;
+                margin-left: 230px;
+                margin-top: 40px;
+            }
+            .mySlides {
+                display:none;
+            }
+            .wrapper{
+                
+  top: 50px;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  
+  
+  width: 300px;
+  height: 50px;
+}
+
+#start-stop{
+  float: left;
+}
+
+#reset-lap{
+  float: right;
+}
+
+.tile{
+  border: none;
+  display: block;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-box-shadow: inset 0px 0px 1px #FFFFCC;
+  -moz-box-shadow: inset 0px 0px 1px #FFFFCC;
+  -o-box-shadow: inset 0px 0px 1px #FFFFCC;
+  box-shadow: inset 0px 0px 1px #FFFFCC;
+}
+
+.action-button{
+  cursor: pointer;
+  color: white;
+  font-size: 1em;
+  padding: 5px;
+  margin: 0;
+  margin-top: 10px;
+  width: 70px;
+}
+
+.action-button:hover{
+  outline: #999999 solid 1px;
+}
+
+.start-button{
+  background-color: #60a917;
+}
+
+.lap-button{
+  background-color: #4390df;
+}
+
+.reset-button, .stop-button{
+  background-color: #9a1616; 
+}
+
+#watch-dial{
+  background-color: #333333;
+  font-size: 2.5em;
+  font-family: monospace;
+  text-align: center;
+  color: black;
+  padding: 15px;
+}
+
+#laps{
+  margin-top: 70px;
+  height: 100px;
+  overflow-y: auto;
+  color: black;
+  list-style: none;
+  padding: 0px;
+}
+
+#laps > li{
+  border-color: black;
+  width: 100%;
+  display: inline-block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 1.5em;
+}
+        
+    </style>
+    
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Танилцуулга</a>
+                <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Хийсэн ажил</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Холбоо барих</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="" />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">А.Төрмөнх</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Web developer</p>
+            </div>
+        </header>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Хийсэн ажил</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row">
+                    <!-- Portfolio Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="Stopwatch" />
+                            <div class="centered">Stopwatch</div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2-->
+                    
+                    <!-- Portfolio Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="" />
+                            <div class="centered">Login</div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="" />
+                            <div class="centered">Calculator</div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 5-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="" />
+                            <div class="centered">Slideshow</div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 6-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="" />
+                            <div class="centered">Random string</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="Stopwatch" />
+                            <div class="centered">Rock paper scissor</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal8">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="Stopwatch" />
+                            <div class="centered">Countdown</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal9">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="Stopwatch" />
+                            <div class="centered">Background change</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal10">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="Stopwatch" />
+                            <div class="centered">Slider</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="black.png" alt="" />
+                            <div class="centered">Todo-list</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">Холбоо барих</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                
+                    <p><h1>E-mail : Tumuchku_turuu@yahoo.com</h1></p>
+                    <p><h1>Утас : 88889999</h1></p>
+                                
+                    
+
+                <!-- About Section Button-->
+                
+            </div>
+        </section>
+        <!-- Contact Section-->
+        
+        <!-- Footer-->
+        
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright © Your Website 2020</small></div>
+        </div>
+        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+        <div class="scroll-to-top d-lg-none position-fixed">
+            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Stopwatch</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class="wrapper">
+                                        <div id="watch-dial" class="tile">00:00:00:00</div>
+                                        <button id="start-stop" class="tile action-button start-button">Start</button>
+                                        <button id="reset-lap" class="tile action-button reset-button">Reset</button>
+                                        <ul id="laps">
+                                        </ul>
+                                      </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Todo-list</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <div class = "tom1">
+                                        <input class="todo" type="text" id="input">
+                                            <button onclick="click1()" id = "nemeh">+</button>
+                                        <div id ="item">
+                                            
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal3Label">Login</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <div>  
+                                        <p> username : "Turuu",
+                                            password : "19980927"
+                                            username : "Bataa",
+                                            password : "1234"
+                                            username : "Dorj",
+                                            password : "9876"</p>                   
+                                        <p>Username</p>
+                                        <input type="text" name="username" id="username"/>
+                                        <p>Password</p>
+                                        <input type="password" name="password" id="password"/>
+                                        <button class = "login" onclick="click1()">Login</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal4Label">Calculator</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <table class="toonii">
+                                        <tr>
+                                            <input id="myInput" disabled>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td><button class="calc" onclick="insert(7)">7</button></td>
+                                            <td><button class="calc" onclick="insert(8)">8</button></td>
+                                            <td><button class="calc" onclick="insert(9)">9</button></td>
+                                            <td><button class="calc" onclick="insert('*')">*</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="calc"onclick="insert(4)">4</button></td>
+                                            <td><button class="calc"onclick="insert(5)">5</button></td>
+                                            <td><button class="calc"onclick="insert(6)">6</button></td>
+                                            <td><button class="calc"onclick="insert('+')">+</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="calc"onclick="insert(1)">1</button></td>
+                                            <td><button class="calc"onclick="insert(2)">2</button></td>
+                                            <td><button class="calc"onclick="insert(3)">3</button></td>
+                                            <td><button class="calc"onclick="insert('/')">/</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="calc"onclick="insert('.')">.</button></td>
+                                            <td><button class="calc"onclick="insert(0)">0</button></td>
+                                            <td><button class="calc"onclick="insert('-')">-</button></td>
+                                            <td><button class="calc"onclick="equal()">=</button></td>
+                                            <td><button class="calc" onclick="arilgah()">CE</button></td>
+                                        </tr>
+                                    </table>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal5Label">Slide show</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img id="aaa" src="jm.jpg" />
+                                    <button class= "pause" onclick="click1()">Pause/Resume</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal6Label">Random String</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <form name="randform">
+                                        <input type="button" value="Create Random String" onClick="randomString();">&nbsp;
+                                        <input type="text" name="randomfield" value="">
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Rock Paper Scissor</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <button onclick="play('Хайч')">Хайч</button>
+                                    <button onclick="play('Чулуу')">Чулуу</button>
+                                    <button onclick="play('Даавуу')">Даавуу</button>  
+                                    <p id="result"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Tasty Cake</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="" />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" data-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content" id="soli">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Background-Color Change</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <input type="text" id="inp" />
+                                    <button id="ongo" onclick="changeColor()">Click</button>
+                                    <button id="ongo1" onclick="changeInpColor()">Click-inpColor</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0" id="portfolioModal2Label">Slider</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <div class="w3-content w3-display-container">
+                                        <img class="mySlides" src="banner1.jpg" style="width:100%">
+                                        <img class="mySlides" src="banner2.jpg" style="width:100%">
+                                        <img class="mySlides" src="banner3.jpg" style="width:100%">
+                                        <img class="mySlides" src="banner4.jpg" style="width:100%">
+                                      
+                                        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                                        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var input = document.getElementById('input')
+            function click1(){
+                var p = document.createElement("p")
+                var b = document.createElement('button');
+               
+                b.style.marginTop = "-37px" 
+                b.style.marginLeft = "292px"
+                b.innerHTML = "X"
+                p.innerHTML =  input.value
+                b.onclick = function(){
+                    p.style.display = "none"
+                    b.style.display = "none"
+                }
+                document.getElementById("item").append(p, b)
+            }
+            var minuts = document.getElementById('minuts')
+            var secunds = document.getElementById('secunds')
+            var doils = document.getElementById('doils')
+            var minut = 0
+            var sec = 0 
+            var milsec = 0
+            var intervalId = 0
+            var q = setInterval(doil, 10)
+            var a = clearInterval(q)
+            function doil() {
+                doils.innerHTML = ":" + milsec
+                milsec++
+                if(milsec === 100){
+                    milsec = 0    
+                    sec = ++sec
+                    secunds.innerHTML =   sec
+                }
+                else if(sec == 60){
+                    sec = 0
+                    minut = ++minut
+                    minuts.innerHTML = minut + ":"
+                }   
+                else if (sec < 10){
+                    secunds.innerHTML = "0" + sec
+                }
+                else if (minut < 10){
+                    minuts.innerHTML = "0" + minut + ":"
+                }
+                clearInterval(q)
+            }
+            function start(){
+                if(intervalId == 0){
+                    intervalId = setInterval(doil, 10)
+                }
+                
+            }
+            function stop(){
+                clearInterval(intervalId)
+                intervalId = 0
+            }
+            
+            function reset(){
+                minut = 0
+                sec = 0 
+                milsec = 0
+                doils.innerHTML = "00"
+                secunds.innerHTML = "00"
+                minuts.innerHTML = "00:" 
+
+            }
+            function lap(){
+                var p = document.createElement("p")
+                p.innerHTML = minuts.innerHTML  + secunds.innerHTML  + doils.innerHTML
+                document.getElementById("lap").appendChild(p)
+            }
+            var myArray = ["+","-","*","/"]
+            var hasDot = false
+            var myInput = document.getElementById("myInput")
+                function insert(argument1){
+                var lastChar = myInput.value[myInput.value.length-1]
+                if(argument1 == "." && hasDot){
+                }
+                else if(myArray.includes(argument1)){
+                        if(myArray.includes(lastChar)){
+                        }
+                        else{
+                            myInput.value += argument1
+                            hasDot = false
+                        }
+                }
+                else{
+                    myInput.value += argument1
+                }
+                if(myInput.value[myInput.value.length-1] == "."){
+                    hasDot = true
+                }
+		    }
+            function equal(){
+                if(myArray.includes(myInput.value[myInput.value.length-1])){
+                    alert("Тоогоо оруулна уу!")
+                }
+                else if(myInput.value){	
+                    myInput.value = eval(myInput.value) 
+                }
+                
+            }
+            function arilgah(){
+                myInput.value = "  "
+            }
+                var image = document.getElementById("aaa");
+                var img_array=["jm1.jpg","jm2.jpg", "jm.jpg"];
+                var index = 0;
+                var num = 0
+                var q = setInterval(slide ,1000);
+                function slide(){   
+                    image.src = img_array[index];
+                        index++;
+                    if(index >= img_array.length){
+                        index=0;
+                    }
+                }
+                 setInterval(q);
+            function click1() {
+                num++
+                if(num==1){
+                    clearInterval(q)
+                }
+                else if(num==2){
+                    q = setInterval(slide, 1000)
+                    num = 0   
+                }
+            }
+            var objPeople = [{
+                    username : "Turuu",
+                    password : "19980927"
+                },
+                {
+                    username : "Bataa",
+                    password : "1234"
+                },
+                {
+                    username : "Dorj",
+                    password : "9876"
+                }]
+            function click1() {
+                var username = document.getElementById("username").value
+                var password = document.getElementById("password").value
+                for(i = 0; i < objPeople.length; i++){
+                    if(username == objPeople[i].username){
+                        if(password == objPeople[i].password){
+                            alert("Амжилттай нэвтэрлээ")
+                        }  
+                        else if(username == objPeople[i].username){
+                                if(password !== objPeople[i].password){
+                                alert("password буруу")     
+                            }   
+                        }    
+                    }
+                    else if(password == objPeople[i].password){
+                            if(username !== objPeople[i].username){
+                                alert("username буруу")
+                            }
+                    }
+                }
+                                
+            }
+            function play(arg) {
+                var randomNumber = Math.floor(Math.random() * 3)
+                console.log(randomNumber)
+                var myString = "CPU:"
+                if (randomNumber == 0) 
+                    myString += "Хайч"
+                else if (randomNumber ==1) 
+                    myString += "Чулуу" 
+                else if (randomNumber == 2)
+                    myString += "Даавуу"
+                    myString += " " + "vs" + " " + arg
+                    document.getElementById('result').innerHTML = myString
+            }
+            let colors = ["red", "gray", "blue", "yellow"];
+            i = 0;
+            function changeColor() {
+                document.getElementById('soli').style.backgroundColor = colors[i];
+                i++;
+                if (i === colors.length) {
+                    i = 0;
+                }
+            }
+            function changeInpColor() {
+                var newColor = document.getElementById("inp").value;
+                document.getElementById('soli').style.backgroundColor = newColor;
+                colors.push(newColor);
+                console.log(colors);
+            }
+            var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n) {
+                showDivs(slideIndex += n);
+                }
+
+                function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";  
+                }
+                x[slideIndex-1].style.display = "block";  
+                }
+                function randomString() {
+                    var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+                    var string_length = 1;
+                    var randomstring = '';
+                    for (var i=0; i<string_length; i++) {
+                        var rnum = Math.floor(Math.random() * chars.length);
+                        randomstring += chars.substring(rnum,rnum+1);
+                    }
+                    document.randform.randomfield.value = randomstring;
+                }
+                (function(){
+  /*
+    polyfills for IE8
+  */
+  if(!Array.prototype.forEach){
+    Array.prototype.forEach = function(callback){
+      for(var i=0; i<this.length; i++){
+        callback(this[i]);
+      }      
+    }
+  }
+
+  if(!Array.prototype.map){
+    Array.prototype.map = function(callback){
+      var items = [];
+      for(var i=0; i<this.length; i++){
+        items.push(callback(this[i]));
+      }
+      return items;
+    }
+  }
+
+  var secondInMilliseconds = 1000;
+  var minuteInMilliseconds = 60*secondInMilliseconds;
+  var hourInMilliseconds = 60*minuteInMilliseconds;
+  var floor = Math.floor;
+
+  var extractMilliseconds = function(timeInMilliseconds){
+    return timeInMilliseconds % 1000;
+  }
+  var extractSeconds = function(timeInMilliseconds){
+    return floor(timeInMilliseconds/secondInMilliseconds);
+  }
+  var extractMinutes = function(timeInMilliseconds){
+    return floor(timeInMilliseconds/minuteInMilliseconds);
+  }
+  var extractHours = function(timeInMilliseconds){
+    return floor(timeInMilliseconds/hourInMilliseconds);
+  }
+  var pad = function(number){
+    if(number < 10){
+      return "0"+number;
+    }else{
+      return number;
+    }
+  }
+  var extractTime = function(timeInMilliseconds){
+    var hours = extractHours(timeInMilliseconds);
+    timeInMilliseconds -= hours*hourInMilliseconds;
+    var minutes = extractMinutes(timeInMilliseconds);
+    timeInMilliseconds -= minutes*minuteInMilliseconds;
+    var seconds = extractSeconds(timeInMilliseconds);
+    timeInMilliseconds -= seconds*secondInMilliseconds;
+    var milliseconds = timeInMilliseconds;
+    return {hours: hours, minutes: minutes, seconds: seconds, milliseconds: milliseconds};
+  }
+
+  // Lap object which gives the time elapsed between two given laps
+  var Lap = function(netTime, previousLap){
+    this.previousLap = previousLap;
+    this.netTime = netTime; //netTime is in milliseconds
+  };
+
+  Lap.prototype = {
+    militaryTime: function(timeInMilliseconds){     
+      var timeSeparator = ":";
+      var time = extractTime(timeInMilliseconds);
+      time.milliseconds = time.milliseconds/10;
+      return ['hours', 'minutes', 'seconds', 'milliseconds'].map(function(property){
+        return pad(time[property]);
+      }).join(timeSeparator);
+    },
+    splitString: function(){
+      if(this.previousLap != null){
+        var timeDifference = this.netTime - this.previousLap.netTime;
+        return this.militaryTime(timeDifference);
+      }else{
+        return this.militaryTime(this.netTime);
+      }
+    }
+  }
+
+  var StopWatch = window.StopWatch = function(options){
+    if(options == null){
+      options = {}
+    }
+    
+    var _this = this;
+    var callbackProperties = ['callback', 'callbackTarget', 'lapCallback', 'lapCallbackTarget'];
+    var netTime = hours = minutes = seconds = milliseconds = 0;
+    var running = false;
+    var laps = [];
+    
+    // Initializing callbacks & its targets
+    callbackProperties.forEach(function(property){
+      if(options[property] != null){
+        _this[property] = options[property];
+      }
+    });
+
+    // getter methods
+    this.running = function(){
+      return running;
+    };
+    this.hours = function(){
+      return hours;
+    };
+    this.minutes = function(){
+      return minutes;
+    };
+    this.seconds = function(){
+      return seconds;
+    };
+    this.milliseconds = function(){
+      return milliseconds;
+    };
+    this.netTime = function(){
+      return netTime;
+    };
+
+   
+    this.militaryTime = function(){
+      return [pad(hours), pad(minutes), pad(seconds), pad(milliseconds/10)].join(":");
+    };
+
+    this.callbackArgument = this.militaryTime;
+
+    
+    var timeDidChange = function(){
+      var callback = _this.callback
+      if(callback != null){
+        var callbackTarget = _this.callbackTarget || window;
+        if(typeof callback === 'string'){
+          callback = callbackTarget[callback];
+        }
+        if(typeof callback === 'function'){
+          callback.call(callbackTarget, _this.callbackArgument.call(_this));
+        }
+      }
+    };
+
+    /*
+      An Observer that gets fired for every lap addition, useful to display all the laps as being added on UI
+      Usage:
+      var myObject = {
+        updateLaps: function(militaryTime){
+          var table = document.getElementById("lap-table");
+          table.addRow(militaryTime);
+        }
+      }
+      var stopwatch = new StopWatch({lapCallback: 'updateLaps', lapCallbackTarget: myObject})
+      stopwatch.start();
+      stopwatch.addLap(); //add a row to the table
+    */
+    var lapDidChange = function(lap, isReset){
+      if(_this.lapCallback != null){
+        var lapCallbackTarget = _this.lapCallbackTarget || window;
+        var lapCallback = _this.lapCallback;
+        if(typeof lapCallback === "string"){
+          lapCallback = lapCallbackTarget[lapCallback];
+        }
+        if(typeof lapCallback === 'function'){
+          lapCallback.call(lapCallbackTarget, (lap && lap.splitString()), isReset);
+        }
+      }
+    };
+
+    /*
+      Useful to initialize time for a given time in milliseconds also invokes timeDidChange()
+    */
+    var initializeTimer = function(timeInMilliseconds){
+      var time = extractTime(timeInMilliseconds);
+      hours = time.hours;
+      minutes = time.minutes;
+      seconds = time.seconds;
+      milliseconds = time.milliseconds;
+      netTime = timeInMilliseconds;
+      timeDidChange();
+      return _this;
+    };
+
+    /*
+      Method which updates milliseconds, seconds, minutes, hours by one ten milliseconds
+      invokes timeDidChange()
+    */
+    var incrementByTenMilliseconds = function(){
+      if(milliseconds === 990){
+        milliseconds = 0;
+        if(seconds === 59){
+          seconds = 0;
+          if(minutes === 59){
+            minutes = 0;
+            hours += 1;
+          }else{
+            minutes += 1;
+          }
+        }else{
+          seconds += 1;
+        }
+      }else{
+        milliseconds += 10;
+      }
+      netTime += 10;
+      timeDidChange();
+      return _this;
+    };
+
+    /*
+      Kick starts the stopwatch
+    */
+    this.start = function(){
+      running = true;
+      this.interval = setInterval(function(){
+        incrementByTenMilliseconds();
+      }, 10);
+    };
+
+    /*
+      Halts/Pauses the stopwatch
+    */
+    this.stop = function(){
+      if(this.interval != null){
+        clearInterval(this.interval);
+      }
+      running = false;
+    };
+
+
+    /*
+      Captures a lap
+    */
+    this.addLap = function(){
+      var previousLap = laps[laps.length - 1];
+      var currentLap = new Lap(netTime, previousLap);
+      laps.push(currentLap);
+      lapDidChange(currentLap, false);
+    }
+
+    /*
+      Resets all laps, invokes lapDidChange
+    */
+    this.resetLaps = function(){
+      laps = [];
+      lapDidChange(null, true)
+    }
+
+    /*
+      resets the stopwatch
+    */
+    this.reset = function(){
+      this.stop();
+      this.resetLaps();
+      initializeTimer(0);
+    };
+
+    /* 
+      Initializing netTime if provided via options
+    */
+    if(options.netTime != null){
+      netTime = options.netTime;
+      initializeTimer(netTime);
+    }
+  };
+})()
+/* stowatch.js End */
+
+var watch = document.getElementById("watch-dial");
+var lapContainer = document.getElementById('laps');
+var lapCount = 0;
+
+//callback which gets invoked during timeDidChange() observer of stopwatch
+window.updateWatch = function(militaryTime){
+  watch.innerHTML = militaryTime;
+}
+
+//callback that gets invoked during lapDidChange() observer of stopwatch
+window.updateLap = function(lapSplitString, isReset){
+  if(isReset){
+    lapContainer.innerHTML = "";
+    lapCount = 0;
+  }else{
+    var li = document.createElement('li');
+    lapCount += 1;
+    li.innerHTML = "#"+lapCount+" "+lapSplitString;
+    li.className = "tile";
+    lapContainer.appendChild(li);
+  }
+}
+
+//replace's an element's given class with a specified class
+var replaceClass = function(ele, class1, class2){
+  if(ele.className.indexOf(class1) > 1){
+    ele.className = ele.className.replace(class1, class2);
+  }
+}
+
+var stopwatch = new StopWatch({callback: 'updateWatch', lapCallback: 'updateLap'});
+var startStopButton = document.getElementById("start-stop");
+var resetLapButton = document.getElementById("reset-lap");
+
+var startStopButtonEvent = function(){
+  if(!stopwatch.running()){
+    replaceClass(startStopButton, 'start-button', 'stop-button');
+    replaceClass(resetLapButton, 'reset-button', 'lap-button');
+    startStopButton.innerHTML = 'Stop';
+    resetLapButton.innerHTML = 'Lap';
+    stopwatch.start();
+  }else{
+    replaceClass(startStopButton, 'stop-button', 'start-button');
+    replaceClass(resetLapButton, 'lap-button', 'reset-button');
+    startStopButton.innerHTML = 'Start';
+    resetLapButton.innerHTML = 'Reset';
+    stopwatch.stop();
+  }
+}
+
+var resetLapButtonEvent = function(){
+  if(!stopwatch.running()){
+    stopwatch.reset();
+  }else{
+    stopwatch.addLap();
+  }
+}
+
+//Adding event listeners to the buttons
+if(!document.addEventListener){
+  startStopButton.attachEvent("onclick", startStopButtonEvent); //For IE8
+  resetLapButton.attachEvent("onclick", resetLapButtonEvent); //For IE8
+}else{
+  startStopButton.addEventListener("click", startStopButtonEvent);
+  resetLapButton.addEventListener('click', resetLapButtonEvent);
+}
+var input = document.getElementById('input')
+            function click1(){
+                var p = document.createElement("p")
+                var b = document.createElement('button');
+                b.style.position = "absolute"
+                b.style.marginTop = "-37px" 
+                b.style.marginLeft = "292px"
+                b.innerHTML = "X"
+                p.innerHTML =  input.value
+                b.onclick = function(){
+                    p.style.display = "none"
+                    b.style.display = "none"
+                }
+                document.getElementById("item").append(p, b)
+            }
+        </script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+
+.one {
+    background: url(../img/img3.jpg)!important;
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    justify-content: center;
+}
+.one h1 {
+    color: white;
+    font-size: 65px;
+    margin: 0;
+    font-family: sans-serif;
+}
+.one p {
+    padding:0 15px;
+    font-size: 25px;
+    color:white;
+
+}
+.four {
+    background: url(../img/img2.jpg);
+   -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+}
+.four h2{
+    font-size: 26px;
+}
+.three {
+    background: url(../img/img3.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.two {
+    background: url(../img/Book1.jpg);
+    -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+}
+.five {
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../img/Book2.jpg);
+    -webkit-backface-visibility: cover;
+   background-size: cover;
+    background-position: center center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+.five h1{
+    font-size: 65px;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+}
+.five h2 a{
+    padding:0 15px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+.six {
+    background-color: white;
+    font-size: 50px;
+    background: white;
+    text-align: center;
+}
+.six .fa {
+    color:;
+    margin: 10px;
+}

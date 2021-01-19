@@ -1,0 +1,42 @@
+body 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+ .div1 
+{
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background-color: red;
+}
+
+ .div2 
+{
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    background-color: blue;
+}
+
+ .div3
+{
+    height: 150px;
+    width: 150px;
+    background-color: green;
+    display: inline-block;
+}
+
+ .divHidden1
+{
+    visibility: hidden;
+}
+
+ .divHidden2 
+{
+    visibility: visible;
+}

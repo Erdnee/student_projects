@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="imageslider/style.css">
+    <title>imageSlider</title>
+    <link rel="stylesheet" href="imageslide.css">
+  
+</head>     
+<body>
+    <a href="index.html#work">Back</a>
+    <script src="imageslider/app.js"></script>
+    <div class="slider">
+        
+        <div class="slides">
+            <div id="slide-1">
+                <img id="slide1" src="images/kobe1920 1.jpg" alt="">
+            </div>
+            <div id="slide-2">
+                <img id="slide1" src="images/kobe1920 2.jpg" alt="">
+            </div>
+            <div id="slide-3">
+                <img id="slide1" src="images/kobe1920 3.jpg" alt="">
+            </div>
+            <div id="slide-4">
+                <img id="slide1" src="images/kobe1920 4.jpg" alt="">
+            </div>
+  
+            </div>
+        </div>
+        <div>
+            <a href="#slide-2" onclick="prev()" id="prev">Previous</a>
+            <a href="#slide-1" onclick="next()" id="next">Next</a>
+        </div>
+
+    </div>
+    <script>
+      let q = 1
+
+function next() {
+    if (q == 5) {
+        q = q - q
+    }
+    q++
+    document.getElementById("next").href = "#slide-" + q
+
+}
+
+function prev() {
+    if (q == 1) {
+        q = q + 5
+    }
+    q--
+    document.getElementById("prev").href = "#slide-" + q
+
+}
+    </script>
+</body>
+
+</html>

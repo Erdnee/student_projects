@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo list</title>
+</head>
+<style>
+	body{
+	background: url(../images/img1.jpg) center center / cover no-repeat;
+	width: 100%;
+	height: 100vh;
+	overflow-x: hidden;
+}
+	input{
+		background: rgba(255,255,255,.5);
+		height: 10vw;
+		width: 35vw;
+		float: left;
+	}
+	.b1{
+		height: 10.45vw;
+		background: rgba(255,255,255,.5);
+		width: 24.4vw;
+	}
+	.div1{
+		height: 60vh;
+		width: 55vw;
+		padding: 2.5vw;
+		background: gray;
+		overflow: scroll;
+		background: rgba(255,255,255,.5);
+	}
+	.div2{
+		width: 60vw;
+		background: rgba(255,255,255,.5);
+	}
+
+</style>
+<body>
+<button onclick="goBack()">Go Back</button>
+<div class="div2">
+	<input type="" name="" id="input">
+	<button class="b1" onclick="nemeh()">+</button>
+</div>
+<div class="div1" id="div1">
+	
+</div>
+<script>
+	var input = document.getElementById('input')
+function nemeh() {
+	var p = document.createElement("p")
+	var btn = document.createElement("button")
+		p.innerHTML = input.value
+		document.getElementById("div1").append(p,btn)
+		btn.innerHTML = "-"
+		btn.style.float = "right"
+		btn.style.margin = "1em"
+		p.style.float = "left"
+		p.style.width = "45vw"
+		btn.onclick = function(){
+			p.style.display = "none"
+			btn.style.display = "none"
+		}
+		input.value = ""
+}
+		function goBack() {
+		  window.history.back();
+		}
+</script>
+</body>
+</html>

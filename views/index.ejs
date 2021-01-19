@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <% profs.forEach( (prof,index)=> {%>
+    <style>
+    .prof {
+    background-image: url('/images/<%= prof%>_200.jpg')
+      }
+
+      @media (min-width:500px) {
+      .prof {
+      background-image: url('/images/<%= prof%>_400.jpg')
+        }
+        }
+        @media (min-width:1000px){
+        .prof{
+        background-image:url('/images/<%= prof%>_800.jpg')
+          }
+          }
+          @media (min-width:1800px){
+          .prof{
+          background-image:url('/images/<%= prof%>.jpg')
+            }
+            }
+    </style>
+            <% })%>
+</head>
+
+<body>
+  <% include partials/header.ejs%>
+    <div class="profs">
+      <% profs.forEach( (prof,index)=> {%>
+
+        <div class="prof">
+          <% if(index % 2==0){ %>
+            <div class="opacity opacity-blue"></div>
+            <% } else{ %>
+              <div class="opacity opacity-yellow"></div>
+              <% } %>
+                <div class="prof-name"><a href="/<%=prof%>">
+                    <%= prof%>
+                  </a></div>
+        </div>
+        <% })%>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tic-Tac-Toe</title>
+		<style>
+            html {
+	font-family: 'Press Start 2P', cursive;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	background-color: skyblue;
+	color: #ce4d41;
+}
+
+header {
+	text-align: center;
+	font-size: 1.2rem;
+	margin-top: 3rem;
+}
+
+.setup {
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
+	margin: 3rem auto;
+}
+
+.chooseplayertype {
+	min-width: 50%;
+	text-align: center;
+}
+
+.selection {
+	padding: 0.5rem;
+	margin: 0 1rem;
+	width: 5rem;
+	border: 1px solid #519391;
+	border-radius: 3px;
+	margin: 1rem auto;
+}
+
+.selecttype {
+	margin: 3rem 0 1rem;
+}
+
+.selection:hover {
+	transform: scale(1.05);
+}
+
+.active {
+	background-color: #86cbc0;
+}
+
+.startbuttondiv {
+	margin: 1rem auto;
+}
+
+.startgame {
+	padding: 1rem;
+}
+
+.gameboard {
+	display: grid;
+	height: 40vh;
+	width: 20vw;
+	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+	margin: 15vh auto;
+	justify-items: center;
+	outline: 3px solid #fcf7e8;
+	outline-offset: -1px;
+}
+
+.turn {
+	text-align: center;
+	font-size: 1rem;
+	margin: 3rem 0;
+}
+
+.square {
+	display: flex;
+	text-align: center;
+	font-family: 'Fredoka One', cursive;
+	font-size: 3rem;
+	height: 100%;
+	width: 100%;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+.square:hover {
+	background-color: rgba(220, 220, 220, 0.5);
+}
+
+span {
+	margin: auto;
+}
+
+button {
+	font-size: 0.6rem;
+	font-family: 'Press Start 2P', cursive;
+}
+
+button,
+.selection {
+	cursor: pointer;
+}
+
+.winner {
+	display: block;
+	text-align: center;
+	font-size: 1.6rem;
+	margin: 1rem 0 -5vh;
+}
+
+.playagaincontainer {
+	display: block;
+	text-align: center;
+}
+
+.playagain {
+	font-size: 1rem;
+	margin: 2rem 0 -2rem;
+	padding: 0.9rem;
+}
+
+@media screen and (max-width: 800px) {
+	html {
+		font-size: 0.7rem;
+	}
+
+	h2 {
+		font-size: 0.9rem;
+	}
+
+	.setup {
+		width: 100%;
+	}
+
+	.selection {
+		font-size: 0.7rem;
+	}
+
+	button {
+		font-size: 0.8rem;
+	}
+
+	.gameboard {
+		height: 30vh;
+		width: 30vh;
+		outline: 5px solid #fcf7e8;
+		outline-offset: -2px;
+	}
+}
+        </style>
+	</head>
+	<body>
+		<header>
+			<h1>Tic-Tac-Toe</h1>
+		</header>
+
+		<div class="setup">
+			<div class="chooseplayertype">
+				<h2>Player 1 (X):</h2>
+				<div class="selecttype">
+					<div class="selection human one">Human</div>
+					<div class="selection ai one">AI</div>
+				</div>
+			</div>
+			<div class="chooseplayertype">
+				<h2>Player 2 (O):</h2>
+				<div class="selecttype">
+					<div class="selection human two">Human</div>
+					<div class="selection ai two">AI</div>
+				</div>
+			</div>
+			<div class="startbuttondiv">
+				<button class="startgame">Start Game</button>
+			</div>
+		</div>
+		<div class="turn"></div>
+		<div class="winner"></div>
+		<div class="gameboard"></div>
+
+		<script>
+            const DOM = (() => {
+	return {
+		
+		selection: document.querySelectorAll('.selection'),
+	
+		makeActive: function (e) {
+			e.target.parentNode.querySelectorAll('.selection').forEach((child) => {
+				child.classList.remove('active');
+			});
+			e.target.classList.add('active');
+			if (e.target.classList.contains('human')) {
+				if (e.target.classList.contains('one')) {
+					Controller.player1.type = 'human';
+				} else {
+					Controller.player2.type = 'human';
+				}
+			} else if (e.target.classList.contains('one')) {
+				Controller.player1.type = 'ai';
+			} else {
+				Controller.player2.type = 'ai';
+			}
+		},
+
+		boardContainer: document.querySelector('.gameboard'),
+		
+		getSquares: function () {
+			return this.boardContainer.querySelectorAll('.square');
+		},
+
+		newSquare: function (html) {
+			const square = document.createElement('div');
+			square.className = 'square';
+			square.innerHTML = html;
+			return square;
+		},
+
+		newSquareInner: function (mark) {
+			return `<span>${mark}</span>`;
+		},
+
+		clearBoard: function () {
+			DOM.getSquares().forEach((square) => {
+				this.boardContainer.removeChild(square);
+			});
+		},
+
+		render: function (board) {
+			this.clearBoard();
+			board.forEach((square) => {
+				this.boardContainer.appendChild(
+					DOM.newSquare(DOM.newSquareInner(square.mark))
+				);
+			});
+		},
+
+		setupWindow: document.querySelector('.setup'),
+		startButton: document.querySelector('.startgame'),
+		turnIndicator: document.querySelector('.turn'),
+		winnerBanner: document.querySelector('.winner'),
+
+		winDisplay: function (winner) {
+			if (winner) {
+				this.winnerBanner.textContent = `${winner} wins!`;
+			} else {
+				this.winnerBanner.textContent = "It's a tie!";
+			}
+			const playAgainContainer = document.createElement('div');
+			playAgainContainer.className = 'playagaincontainer';
+			const playAgain = document.createElement('button');
+			playAgain.textContent = 'Play Again';
+			playAgain.className = 'playagain';
+			playAgainContainer.appendChild(playAgain);
+			this.winnerBanner.appendChild(playAgainContainer);
+			playAgain.addEventListener('click', () => {
+				location.reload();
+				return false;
+			});
+		},
+	};
+})();
+
+const Gameboard = (() => {
+
+	const square = {
+		mark: '',
+	};
+
+	const board = [];
+
+	const getBoard = () => {
+		return board;
+	};
+
+	const newMarker = (mark, index) => {
+		board[index] = { mark };
+		DOM.render(board);
+	};
+
+	
+	const init = () => {
+		for (let count = 1; count <= 9; count++) {
+			board.push(square);
+		}
+		DOM.render(getBoard());
+	};
+
+
+	return {
+		getBoard,
+		init,
+		newMarker,
+	};
+})();
+
+const Controller = (() => {
+	
+	const player1 = {
+		name: 'Player 1',
+		marker: 'X',
+		type: '',
+	};
+
+	const player2 = {
+		name: 'Player 2',
+		marker: 'O',
+		type: '',
+	};
+	
+	let player1turn = true;
+
+	const init = () => {
+		DOM.selection.forEach((element) => {
+			element.addEventListener('click', DOM.makeActive);
+		}),
+			DOM.startButton.addEventListener('click', () => {
+				if (selectionCheck()) {
+					startGame();
+				} else {
+					alert('Please select a player type for each player');
+				}
+			});
+	};
+
+	playerToggle = () => {
+		player1turn = !player1turn;
+	};
+	
+	const selectionCheck = () => {
+		return Boolean(player1.type && player2.type);
+	};
+
+	const startGame = () => {
+		DOM.setupWindow.style.display = 'none';
+		Gameboard.init();
+		takeTurn();
+	};
+
+
+	const checkWinner = () => {
+		const board = Gameboard.getBoard();
+		const winConditions = [
+			[0, 1, 2],
+			[3, 4, 5],
+			[6, 7, 8],
+			[0, 3, 6],
+			[1, 4, 7],
+			[2, 5, 8],
+			[0, 4, 8],
+			[2, 4, 6],
+		];
+	
+		if (
+			winConditions.some((array) => {
+				let winCheck = [];
+				array.forEach((box) => {
+					if (board[box].mark !== '') {
+						winCheck.push(board[box]);
+					}
+				});
+				if (winCheck.length == 3) {
+					if (
+						winCheck.every((square) => {
+							return square.mark == 'X';
+						})
+					) {
+						DOM.winDisplay(player1.name);
+						return true;
+					} else if (
+						winCheck.every((square) => {
+							return square.mark == 'O';
+						})
+					) {
+						DOM.winDisplay(player2.name);
+						return true;
+					} else {
+						return false;
+					}
+				}
+			})
+		) {
+			return true;
+		
+		} else if (
+			board.filter((square) => {
+				return square.mark !== '';
+			}).length == 9
+		) {
+			DOM.winDisplay();
+			return true;
+		} else return false;
+	};
+
+	const computerPlay = (marker) => {
+		let choices = Gameboard.getBoard().map((square, index) => {
+			if (square.mark !== '') {
+				return false;
+			} else {
+				return index;
+			}
+		});
+		choices = choices.filter((item) => {
+			return item !== false;
+		});
+		const selection = Math.floor(Math.random() * choices.length);
+		Gameboard.newMarker(marker, choices[selection]);
+		playerToggle();
+		takeTurn();
+	};
+
+	const humanPlay = (marker) => {
+		DOM.getSquares().forEach((square) => {
+			square.addEventListener('click', (e) => {
+				if (e.currentTarget.textContent == '') {
+					const index = Array.from(e.currentTarget.parentNode.children).indexOf(
+						e.currentTarget
+					);
+					Gameboard.newMarker(marker, index);
+					playerToggle();
+					takeTurn();
+					return;
+				}
+			});
+		});
+	};
+	
+	const takeTurn = () => {
+		if (!checkWinner()) {
+			let player;
+			if (player1turn) {
+				player = player1;
+			} else {
+				player = player2;
+			}
+			DOM.turnIndicator.textContent = `${player.name}'s turn:`;
+			if (player.type == 'ai') {
+				computerPlay(player.marker);
+			} else {
+				humanPlay(player.marker);
+			}
+		} else console.log('Winner found, stopping game');
+	};
+
+	init();
+
+	return {
+		player1,
+		player2,
+	};
+})();
+        </script>
+	</body>
+</html>

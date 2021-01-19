@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaPsLoCk</title>
+</head>
+
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        .lol{
+           margin-top: 50px;
+           margin-left:500px;
+        }
+        input{
+            width: 250px;
+            height: 50px;
+            border: none;
+            background-color: lightblue;
+            text-align: center;
+        }
+        p{
+            color: red;
+            text-align: center;
+            width: 250px;
+            height: 50px;
+        }
+    </style>
+
+<body>
+    <div class="lol">
+        <input id="myInput" placeholder="text...">
+        <br>
+        <p id="text">Caps lock is ON.</p>
+    
+    </div>
+
+<script>
+var input = document.getElementById("myInput");
+var text = document.getElementById("text");
+input.addEventListener("keyup", function(event) {
+
+if (event.getModifierState("CapsLock")) {
+    text.style.display = "block";
+  } else {
+    text.style.display = "none"
+  }
+});
+</script>
+
+</body>
+</html>

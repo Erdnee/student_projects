@@ -1,0 +1,87 @@
+/*---------Menu-------*/
+
+.top-header{
+    background-color: white;
+    border: white 1px;
+   background-color: #343434;
+}
+.navbar{
+    background-color:#343434!important;
+    text-transform: uppercase;
+
+}
+.navbar img{
+    width: 3%;
+}
+.navbar-brand{
+    color: white!important;   
+}
+.nav-link{
+    color:white!important;
+text-transform: capitalize;
+}
+
+.container {
+    margin-top: 400px;
+}
+
+.back {
+    font-size: 40px;
+}
+
+.container {
+    margin-top: 200px;
+    margin: auto;
+    background-color: aqua;
+    height: 500px;
+    width: 300px;
+}
+
+.header {
+    width: 100%;
+    height: 82px;
+}
+
+#plused {
+    width: 200px;
+    height: 500px;
+}
+
+.a {
+    width: 30%;
+    float: left;
+    height: 80px;
+}
+
+.aa {
+    float: left;
+    width: 70%;
+    height: 80px;
+}
+
+.list {
+    width: 100%;
+    height: 90%;
+    margin: 0 auto;
+    background-color: chartreuse;
+    overflow: scroll;
+}
+
+#plused {
+    width: 100%;
+    height: 30px;
+}
+
+.check {
+    width: 89%;
+    float: left;
+    background-color: cornflowerblue;
+    height: 30px;
+    border: 1px solid white;
+}
+
+.hh {
+    width: 10%;
+    float: left;
+    height: 30px;
+}

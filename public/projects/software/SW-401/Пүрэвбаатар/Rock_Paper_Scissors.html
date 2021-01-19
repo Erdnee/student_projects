@@ -1,0 +1,219 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <style>
+        .score-board{
+    margin: 20px auto;
+    border: 3px solid white;
+    border-radius: 4px;
+    width: 200px;
+    color: white;
+    font-size: 60px;
+    padding: 15px 20px;
+    text-align: center;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: skyblue;
+}
+.option{
+    border: 4px solid whitesmoke;
+    border-radius: 5px;
+    margin: 0 20px;
+    padding: 10px;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    font-size: 45px;
+}
+.options{
+    text-align: center;
+    margin: 50px 0;
+}
+.result{
+    margin: 50px 0;
+    text-align: center;
+    font-size: 45px;
+    color: white;
+}
+.option:hover{
+    cursor: pointer;
+    border: 4px solid black;
+}
+
+.win-streak{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    margin: 50px 0;
+    padding: 30px;
+
+}
+#draws{
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+#score{
+    font-size: 45%;
+    text-align: center;
+    padding: 5px;
+}
+#you{
+    font-size: 15px;
+}
+#comp{
+    font-size: 15px
+}
+    </style>
+</head>
+<body>
+    <div class="score-board">
+        <div id="score">Score</div>
+        <span id="you">You</span><span id="player-score">0</span><span id="colon">:</span><span id="computer-score">0</span><span id="comp">Comp</span>
+    </div>
+    
+    <div id="draws">Draws: 0</div>
+    <div class="result">Make your moves!</div>
+    <div class="options">
+        <div class="option" id="r">
+            <div>✊</div> 
+        </div>
+        <div class="option" id="p">
+            <div>✋</div>
+        </div>
+        <div class="option" id="s">
+            <div>✌️</div>
+        </div>
+    </div>
+
+    <script>
+        let allOptions = document.querySelector('.options')
+let option = document.querySelector('.option')
+let rockMove = document.getElementById('r')
+let paperMove = document.getElementById('p')
+let scissorMove = document.getElementById('s')
+let playerScore = document.getElementById('player-score')
+let compScore = document.getElementById('computer-score')
+let results = document.querySelector('.result')
+let playerStreakDiv = document.querySelector('.win-streak')
+let timer = document.getElementById('timer')
+let drawElement = document.getElementById('draws')
+let myScore = 0
+let computerScore = 0
+let winStreak = 0
+let draws = 0
+let timeLeft = 30
+
+setTimeout(() => {
+    let xhttp = new XMLHttpRequest()
+    xhttp.open('POST', '/highscore/score/3/submitscore', false)
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+    let name = window.prompt('Type in your name.')
+    xhttp.send('score=' + myScore + '&playerName=' + name)
+    let xhr = new XMLHttpRequest()
+    xhr.open('GET', '/highscore/score/3/topscore?playerName=' + name, false)
+    xhr.onload = function () {
+        let parseJson = JSON.parse(xhr.responseText)
+        if (computerScore > myScore) {
+            allOptions.innerHTML = ''
+            results.innerHTML = 'The computer is now the champion! Your highscore is ' + parseJson.score
+        } else if (myScore > computerScore) {
+            allOptions.innerHTML = ''
+            results.innerHTML = 'Congratulations! You are the champion! Your highscore is ' + parseJson.score
+        } else {
+            allOptions.innerHTML = ''
+            results.innerHTML = 'It\'s a tie! There is no new champion! Your highscore is ' + parseJson.score
+        }
+    }
+    xhr.send(null)
+}, 31000);
+
+
+
+function computerChoice() {
+    const choices = ['Rock', 'Paper', 'Scissor']
+    let randomComputerChoice = Math.floor(Math.random() * 3)
+    return choices[randomComputerChoice]
+}
+
+function convertToEmoji(word) {
+    if (word === 'Rock') return 
+
+    else if (word === 'Paper') return 
+
+    else if (word === 'Scissor') return 
+}
+
+function win(playerChoice, computerChoice) {
+    myScore++
+    playerScore.innerHTML = myScore
+    winStreak++
+    if (winStreak >= 3) {
+        playerStreakDiv.innerHTML = 'Your win streak is: ' + winStreak 
+    } else {
+        playerStreakDiv.innerHTML = 'Your win streak is: ' + winStreak
+    }
+    results.innerHTML = convertToEmoji(playerChoice) + ' beats ' + convertToEmoji(computerChoice) + '! You won'
+}
+
+function lose(playerChoice, computerChoice) {
+    computerScore++
+    compScore.innerHTML = computerScore
+    winStreak = 0
+    playerStreakDiv.innerHTML = 'Your win streak is : ' + winStreak
+    results.innerHTML = convertToEmoji(playerChoice) + ' loses against ' + convertToEmoji(computerChoice) + '! You lost '
+}
+
+function draw() {
+    winStreak = 0
+    draws++
+    drawElement.innerHTML = 'Draws: ' + draws
+    playerStreakDiv.innerHTML = 'Your win streak is : ' + winStreak
+    results.innerHTML = 'It\'s a draw! '
+}
+
+
+function game(playerChoice) {
+    let compChoice = computerChoice()
+    switch (playerChoice + compChoice) {
+        case 'RockScissor':
+        case 'PaperRock':
+        case 'ScissorPaper':
+            win(playerChoice, compChoice)
+            break
+        case 'ScissorRock':
+        case 'RockPaper':
+        case 'PaperScissor':
+            lose(playerChoice, compChoice)
+            break
+        case 'RockRock':
+        case 'PaperPaper':
+        case 'ScissorScissor':
+            draw()
+            break
+    }
+}
+
+function gameMoves() {
+    rockMove.addEventListener('click', () => {
+        game('Rock')
+    })
+
+    paperMove.addEventListener('click', () => {
+        game('Paper')
+    })
+
+    scissorMove.addEventListener('click', () => {
+        game('Scissor')
+    })
+}
+
+gameMoves()
+    </script>
+</body>
+</html>

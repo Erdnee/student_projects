@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calendar</title>
+	<link rel="stylesheet" type="text/css" href="./php/css/style.css">
+</head>
+<style>
+	body{
+	margin: 0;
+	padding: 0;
+	background: lightblue;
+	background-image: url(https://images5.alphacoders.com/488/thumb-1920-488600.jpg);
+}
+.gg{
+	margin-left: 160px;
+	margin-top: 60px;
+	border-radius: 20px;
+	background-color: rgba(255, 0, 0, 0.2);
+	width: 230px;
+	 box-shadow: 4px 4px 4px 4px #000;
+	
+}
+button{
+	color: #fff;
+	background-color: rgba(0,0,0,0.4);
+	border-radius: 20px;
+	border: none;
+}
+th{
+	color: red;
+	font-size: 12px;
+	padding: 5px;
+}
+table{
+	border:none;
+}
+.lol{
+	margin-bottom: 5px;
+	margin-left: 17px;
+}
+td{
+	color: #fff;
+	font-size: 10px;
+}
+</style>
+<body>
+
+	<div class="gg">
+		<div class="lol">
+			<button onclick="printDate(-1)">Umnuh</button>
+			<span id="yearAndMounth"></span>
+			<button onclick="printDate(+1)">Daraah</button>
+		</div>	
+	<table >
+		<thead>
+			<th>Sun</th>
+			<th>Mon</th>
+			<th>Tue</th>
+			<th>Web</th>
+			<th>Thu</th>
+			<th>Fri</th>
+			<th>Sat</th>
+		</thead>
+		<tbody id="tbody">
+			
+		</tbody>
+	</table>
+
+   	</div>
+
+
+
+
+	<script type="text/javascript">
+		var months,yearAndMounth,year,months
+		months = ['Jan' , 'Feb' , 'Mar' , 'Apr' , 'Mar' , 'Jun' , 'Jul' , 'Aug' , 'Set' , 'Oct' , 'Nov' , 'Dec'];
+		yearAndMounth = document.getElementById('yearAndMounth');
+		year = new Date().getFullYear();
+		month = new Date().getMonth();
+		yearAndMounth.innerText = year  + ' ' + months[month];
+		function printDate(num) {
+			month += num;
+			if(month >= 12){
+				month = 0;
+				year++;
+			}else if(month < 0){
+				month = 11;
+				year--
+			}
+			yearAndMounth.innerText = year  + ' ' + months[month];
+			calendar(year, month);
+		}
+		function calendar(year , month){
+			var date = 32 - (new Date(year , month , 32).getDate());
+			var day = new Date(year , month).getDay();
+			var tbody = document.getElementById('tbody');
+			tbody.innerHTML = ' ';
+			var d = 0;
+			var w = 0;
+			for (var i = 0; i < 6; i++) {
+				var	tr = document.createElement('tr');
+				for(var j = 0; j < 7; j++){
+					w++;
+					var td = document.createElement('td');
+					if (day <= w && d < date){
+						d++;
+						td.innerText = d; 
+					}
+					tr.appendChild(td);
+				}
+				 tbody.appendChild(tr);
+			}
+		}
+
+		
+	
+	</script>
+</body>
+
+</html>

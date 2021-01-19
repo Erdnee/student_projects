@@ -1,0 +1,113 @@
+/*---------Menu-------*/
+
+#menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar-brand h3 {
+    padding-left: 30px;
+    color: white;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+    position: relative;
+}
+
+.navbar-nav li a {
+    float: right;
+    text-align: left;
+}
+
+.nav-item .nav-link:after {
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    width: 83%;
+    height: 2px;
+    transform: scalex(0);
+    transition: 0.5s;
+    content: "";
+    background-color: white;
+}
+
+.nav-item .nav-link:hover:after {
+    transform: scalex(1);
+}
+
+.navbar {
+    background-image: linear-gradient(to right, orange, orange, red);
+}
+
+.navbar-toggler {
+    border: none!important;
+}
+
+.nav-link {
+    color: white!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.fas {
+    color: white;
+    margin-top: 13px;
+}
+
+.dropdown-item {
+    color: orange!important;
+}
+
+.container {
+    margin-top: 400px;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    width: 200px;
+    height: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#laps {
+    width: 38.1%;
+    height: 500px;
+    background-color: aquamarine;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow: scroll;
+}
+
+.lapNumber {
+    width: 10%;
+    height: 50px;
+    background-color: yellow;
+    float: left;
+    border: 1px solid white;
+}
+
+.lapTime {
+    width: 89%;
+    height: 50px;
+    float: left;
+    border: 1px solid white;
+}
+
+.lap {
+    width: 100%;
+}
+
+.back {
+    font-size: 40px;
+}
